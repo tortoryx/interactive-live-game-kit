@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>家长会还没散 · 战场预览</title><link rel="stylesheet" href="/stage.css"></head>
+<body><main id="stage">
+<canvas id="battle" width="1920" height="1080" aria-label="魔族与勇者在三条通路上交战，双方会绕开石墙和落石，拾取补给"></canvas>
+<header><div class="brand"><span class="sigil">♜</span><div><small>THE WAR OF FATHERS</small><h1>家长会还没散</h1></div></div><div class="chapter"><span id="viewLabel">魔族视角</span><small>灰烬渡口 · 第 <b id="round">0</b> 场</small></div></header>
+<section class="score demon"><div class="identity"><span id="demonCrown">初代 · 无冠</span><b id="demonName">索恩</b><em id="demonKin">魔王的小儿子</em></div><div class="bar"><i id="demonHP"></i></div><div class="numbers"><span id="demonHealth"></span><span id="demonArmy"></span></div></section>
+<section class="score human"><div class="identity"><span id="humanCrown">初代 · 无冠</span><b id="humanName">阿岚</b><em id="humanKin">年轻的勇者</em></div><div class="bar"><i id="humanHP"></i></div><div class="numbers"><span id="humanHealth"></span><span id="humanArmy"></span></div></section>
+<div class="match"><b id="clock">00:00</b><span id="mode">切磋中</span><small id="wins">0 : 0</small></div>
+<aside class="lore demon"><small>魔族的出兵理由</small><p>他们收走最后一袋冬粮，<br>却把饥民获救写成政绩。</p><span>“庇护他们，就要让他们活下去。”</span></aside>
+<aside class="lore human"><small>勇者的出兵理由</small><p>庇护之名下的血契，<br>把人的一生列入财产。</p><span>“被救下来的人，也该有离开的权利。”</span></aside>
+<div class="portrait-label demon"><small>远血盟 · 魔族</small><b id="demonLabel">索恩</b></div><div class="portrait-label human"><small>灰冠庭 · 人类</small><b id="humanLabel">阿岚</b></div>
+<div id="subtitle" aria-live="polite"><span id="speaker">索恩</span><p id="line">粮都被收走了，你救他们回去吃什么？</p></div>
+<div id="eventFeed"></div><div id="result" hidden><small>这一代，止步于此</small><h2 id="resultTitle"></h2><p id="resultText"></p></div>
+<footer><span class="proof">本地演练 · 规则 AI · 未开播</span><span id="barrierNote">切磋结界生效 · 英雄不会阵亡</span><span>系统援军 ≠ 观众礼物</span></footer>
+<button id="audio" type="button">♫ 开启角色配音</button><div id="connection" hidden>连接中断 · 画面已停止更新</div>
+</main><script src="/stage.js" type="module"></script></body></html>

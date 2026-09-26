@@ -1,0 +1,86 @@
+[
+  {
+    "id": "bilibili:33988",
+    "giftId": 33988,
+    "name": "人气票",
+    "price": 100,
+    "coinType": "gold"
+  },
+  {
+    "id": "bilibili:31164",
+    "giftId": 31164,
+    "name": "粉丝团灯牌",
+    "price": 100,
+    "coinType": "gold"
+  },
+  {
+    "id": "bilibili:31039",
+    "giftId": 31039,
+    "name": "牛哇牛哇",
+    "price": 100,
+    "coinType": "gold"
+  },
+  {
+    "id": "bilibili:31036",
+    "giftId": 31036,
+    "name": "小花花",
+    "price": 100,
+    "coinType": "gold"
+  },
+  {
+    "id": "bilibili:35534",
+    "giftId": 35534,
+    "name": "打call",
+    "price": 200,
+    "coinType": "gold"
+  },
+  {
+    "id": "bilibili:35520",
+    "giftId": 35520,
+    "name": "比心",
+    "price": 1000,
+    "coinType": "gold"
+  },
+  {
+    "id": "bilibili:34500",
+    "giftId": 34500,
+    "name": "你真好看",
+    "price": 1000,
+    "coinType": "gold"
+  },
+  {
+    "id": "bilibili:35545",
+    "giftId": 35545,
+    "name": "情书",
+    "price": 5200,
+    "coinType": "gold"
+  },
+  {
+    "id": "bilibili:31122",
+    "giftId": 31122,
+    "name": "星愿水晶球",
+    "price": 100000,
+    "coinType": "gold"
+  },
+  {
+    "id": "bilibili:35535",
+    "giftId": 35535,
+    "name": "私人飞机",
+    "price": 100000,
+    "coinType": "gold"
+  },
+  {
+    "id": "bilibili:35566",
+    "giftId": 35566,
+    "name": "落日飞车",
+    "price": 200000,
+    "coinType": "gold"
+  },
+  {
+    "id": "bilibili:32228",
+    "giftId": 32228,
+    "name": "爱的乐章",
+    "price": 199000,
+    "coinType": "gold"
+  }
+]

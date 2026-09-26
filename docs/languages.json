@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "project": "Interactive Live Game Kit",
+  "sourceLanguage": "zh-CN",
+  "requiredGuides": [
+    "AI-AND-MEMORY.md",
+    "ARCHITECTURE.md",
+    "BILIBILI-AND-OBS.md",
+    "BUILD-STORY.md",
+    "CONTRIBUTING.md",
+    "REPLACE-EXAMPLE.md",
+    "SECURITY.md",
+    "SHARING.md",
+    "THIRD_PARTY_NOTICES.md",
+    "VALIDATION.md",
+    "WORKFLOW.md"
+  ],
+  "languages": {
+    "zh-CN": {
+      "status": "complete",
+      "readme": "README.zh-CN.md",
+      "exampleReadme": "examples/whitebridge/README.zh-CN.md"
+    },
+    "en": {
+      "status": "complete",
+      "readme": "README.md",
+      "exampleReadme": "examples/whitebridge/README.md"
+    }
+  },
+  "exampleUi": {
+    "zh-CN": "implemented",
+    "en": "not_translated"
+  },
+  "otherLanguages": "not_translated"
+}

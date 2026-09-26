@@ -1,0 +1,621 @@
+{
+  "version": 2,
+  "loopFrames": 2728055,
+  "sampleRate": 24000,
+  "assets": {
+    "drums": {
+      "file": "/audio/score/drums.ogg",
+      "frames": 2728055,
+      "sampleRate": 24000,
+      "channels": 2,
+      "duration": 113.66895833333334,
+      "peak": 0.630046,
+      "rms": 0.056185,
+      "sha256": "ea73bd01f24cfce59a062f8692773591f0531167a6f971bcc9ceb6999a78b00f"
+    },
+    "victory": {
+      "file": "/audio/score/victory.ogg",
+      "frames": 96000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 3.0,
+      "peak": 0.31583,
+      "rms": 0.05075,
+      "sha256": "c7d71484a676c020545bb261fef625b1f9da9ec72aa9159438e947ab9478e732"
+    },
+    "defeat": {
+      "file": "/audio/score/defeat.ogg",
+      "frames": 96000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 3.0,
+      "peak": 0.39034,
+      "rms": 0.08109,
+      "sha256": "cb68d17083c8d766736420f1f64cd7ea31b0ac3c0af34cf5f98158e1e200e763"
+    },
+    "arrival": {
+      "file": "/audio/score/arrival.ogg",
+      "frames": 96000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 3.0,
+      "peak": 0.33854,
+      "rms": 0.07838,
+      "sha256": "ce8786f70f16668cc873acffc7cd23ab5ae7a507f4ef47f814c76782015c17aa"
+    },
+    "swing-0": {
+      "file": "/audio/score/swing-0.ogg",
+      "frames": 14400,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 0.45,
+      "peak": 0.48992,
+      "rms": 0.06323,
+      "sha256": "0fdcb42e05a90b6bc9f4b1905d1207d61e7c90f703a3532e4c7dcf33432d97df"
+    },
+    "steel-0": {
+      "file": "/audio/score/steel-0.ogg",
+      "frames": 35200,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.1,
+      "peak": 0.53229,
+      "rms": 0.02586,
+      "sha256": "aaaf2f07ddb08224c56e03bf1b70a335fd292d917cbce93cb696e514d9e64e03"
+    },
+    "critical-0": {
+      "file": "/audio/score/critical-0.ogg",
+      "frames": 51200,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.6,
+      "peak": 0.59509,
+      "rms": 0.0295,
+      "sha256": "a0805f195ed1d598ca284b4865fc311e6d73b19927d57d24fe80aa7f60df1263"
+    },
+    "thunder-0": {
+      "file": "/audio/score/thunder-0.ogg",
+      "frames": 80000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 2.5,
+      "peak": 0.92456,
+      "rms": 0.04243,
+      "sha256": "3b501ad6575adffe1f932afaa10e61d7b874e23915129ed977e4a88acec05b83"
+    },
+    "stampede-0": {
+      "file": "/audio/score/stampede-0.ogg",
+      "frames": 102400,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 3.2,
+      "peak": 0.79249,
+      "rms": 0.05405,
+      "sha256": "25e19794adbc5e8176c0d6ff6549d5b0058afcce9051365cb4866f26c0c62756"
+    },
+    "arrow-0": {
+      "file": "/audio/score/arrow-0.ogg",
+      "frames": 15360,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 0.48,
+      "peak": 0.28465,
+      "rms": 0.03214,
+      "sha256": "0972301eafe41cda3aad09d091d3b2153e7d4b4307c041ae2aa23d849f7e1ec4"
+    },
+    "arrow-hit-0": {
+      "file": "/audio/score/arrow-hit-0.ogg",
+      "frames": 20800,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 0.65,
+      "peak": 0.43674,
+      "rms": 0.03676,
+      "sha256": "842bd5e25f3a170f4b3e3b2445f5ac6ad9cacea7216e32e3623693b72d09de13"
+    },
+    "rifle-0": {
+      "file": "/audio/score/rifle-0.ogg",
+      "frames": 32000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.0,
+      "peak": 0.68754,
+      "rms": 0.03297,
+      "sha256": "4aeb8b03b0973c7b60163c8e2acb183b8f7faa153ee80db7b824ce8b23f10bf3"
+    },
+    "shotgun-0": {
+      "file": "/audio/score/shotgun-0.ogg",
+      "frames": 41600,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.3,
+      "peak": 0.64971,
+      "rms": 0.03432,
+      "sha256": "618eee3a12c2f3d9ce34349e430c9cb705c5523898cd51c5c677b1c31904de2e"
+    },
+    "cannon-0": {
+      "file": "/audio/score/cannon-0.ogg",
+      "frames": 70400,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 2.2,
+      "peak": 0.7248,
+      "rms": 0.05537,
+      "sha256": "2155555094780634abb7ddbd9953a19bd2cdc520bb722883a2713f82f6d1e49b"
+    },
+    "explosion-0": {
+      "file": "/audio/score/explosion-0.ogg",
+      "frames": 89600,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 2.8,
+      "peak": 0.82398,
+      "rms": 0.06867,
+      "sha256": "823f5e412f04f1f852cff172d02b38f9129e04797f8127b25304a00936547b6c"
+    },
+    "meteor-0": {
+      "file": "/audio/score/meteor-0.ogg",
+      "frames": 112000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 3.5,
+      "peak": 0.88599,
+      "rms": 0.06467,
+      "sha256": "380a77dd2a947f32796b522511fd66c81be30bb727d6854c7e1f7971f879c940"
+    },
+    "quake-0": {
+      "file": "/audio/score/quake-0.ogg",
+      "frames": 108800,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 3.4,
+      "peak": 0.90324,
+      "rms": 0.05745,
+      "sha256": "0983766f8a664145c2cf1f2fd491df6a1ecbf9fd5d8cc0eb9328d083eece7eda"
+    },
+    "flame-0": {
+      "file": "/audio/score/flame-0.ogg",
+      "frames": 54400,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.7,
+      "peak": 0.69825,
+      "rms": 0.07354,
+      "sha256": "6123565519d0c1d11a063765c56a14bfa4d12022c2f4599ddd475cc19118fba8"
+    },
+    "crush-0": {
+      "file": "/audio/score/crush-0.ogg",
+      "frames": 51200,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.6,
+      "peak": 0.6513,
+      "rms": 0.05289,
+      "sha256": "5bb93924b2854e6310e22de126440bbc8d7dee5a38f456121b397716b1b596e2"
+    },
+    "march-0": {
+      "file": "/audio/score/march-0.ogg",
+      "frames": 19200,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 0.6,
+      "peak": 0.59933,
+      "rms": 0.04098,
+      "sha256": "31222dd8426452735abf83e8eafaff8fedbdee26e72ee8b148838b02e01c8a7f"
+    },
+    "crown-0": {
+      "file": "/audio/score/crown-0.ogg",
+      "frames": 48000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.5,
+      "peak": 0.59376,
+      "rms": 0.01545,
+      "sha256": "cdf0fbca88b8430e9f0c135365e7140dfb44b7c1358b9f2d02f876ffba21467b"
+    },
+    "swing-1": {
+      "file": "/audio/score/swing-1.ogg",
+      "frames": 14400,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 0.45,
+      "peak": 0.68036,
+      "rms": 0.08027,
+      "sha256": "8cb0243a029ceb69f9f050fce87955759212ad6801fd7db89c1a21368f0e91a5"
+    },
+    "steel-1": {
+      "file": "/audio/score/steel-1.ogg",
+      "frames": 35200,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.1,
+      "peak": 0.54273,
+      "rms": 0.02603,
+      "sha256": "1b96df41a9c92f1dbdb3395db9d4973bdb55cac448166cb80ea3daebd766e55a"
+    },
+    "critical-1": {
+      "file": "/audio/score/critical-1.ogg",
+      "frames": 51200,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.6,
+      "peak": 0.61302,
+      "rms": 0.02976,
+      "sha256": "aa4b83cbf1f1f729a5c42150175c452121c3d8c9cffc8b1efbb4e7d4421f6af5"
+    },
+    "thunder-1": {
+      "file": "/audio/score/thunder-1.ogg",
+      "frames": 80000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 2.5,
+      "peak": 0.86359,
+      "rms": 0.0416,
+      "sha256": "c51726caac612ae343897f6c0daa0a25ab09458f03798527232da44b1390823d"
+    },
+    "stampede-1": {
+      "file": "/audio/score/stampede-1.ogg",
+      "frames": 102400,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 3.2,
+      "peak": 0.81224,
+      "rms": 0.05291,
+      "sha256": "3ad7dd2736fb1f8de76e7580203561c1e548ebbec61f3b78fdd735a23be45953"
+    },
+    "arrow-1": {
+      "file": "/audio/score/arrow-1.ogg",
+      "frames": 15360,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 0.48,
+      "peak": 0.46332,
+      "rms": 0.04019,
+      "sha256": "5f96b70335a5c38756e34bd19843284264c103c0d00802f6ead1ab622428e523"
+    },
+    "arrow-hit-1": {
+      "file": "/audio/score/arrow-hit-1.ogg",
+      "frames": 20800,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 0.65,
+      "peak": 0.449,
+      "rms": 0.03612,
+      "sha256": "812c4dbccc472acc47721260a10ea6be1cc705daaca1d4163b8fffbe730595e9"
+    },
+    "rifle-1": {
+      "file": "/audio/score/rifle-1.ogg",
+      "frames": 32000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.0,
+      "peak": 0.9263,
+      "rms": 0.03498,
+      "sha256": "cc2615af8079602a385fe2801024e5e1bc1e7019b99de9016d3d505f0fde83c8"
+    },
+    "shotgun-1": {
+      "file": "/audio/score/shotgun-1.ogg",
+      "frames": 41600,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.3,
+      "peak": 0.8847,
+      "rms": 0.03653,
+      "sha256": "10cfb7b9e3eef48413b2c9332e1fecb88117fd97cd493a9731a1f8f534583518"
+    },
+    "cannon-1": {
+      "file": "/audio/score/cannon-1.ogg",
+      "frames": 70400,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 2.2,
+      "peak": 0.88877,
+      "rms": 0.05992,
+      "sha256": "9e783f243e3a53685de7cd8f19039b5a2f14992b1d6dd94e27276544f0757700"
+    },
+    "explosion-1": {
+      "file": "/audio/score/explosion-1.ogg",
+      "frames": 89600,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 2.8,
+      "peak": 0.83883,
+      "rms": 0.06952,
+      "sha256": "ea3642a957af2a58d4287c256f557b862f56ac6b1ef27455278337e64a1c9577"
+    },
+    "meteor-1": {
+      "file": "/audio/score/meteor-1.ogg",
+      "frames": 112000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 3.5,
+      "peak": 0.84749,
+      "rms": 0.05603,
+      "sha256": "661c264e2bad089e8948203223bd96ccf8572f5c539d8151909e63d62247b445"
+    },
+    "quake-1": {
+      "file": "/audio/score/quake-1.ogg",
+      "frames": 108800,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 3.4,
+      "peak": 0.86038,
+      "rms": 0.05309,
+      "sha256": "e6bad55377bb14dc2d74d0d659f7e9986a5063b2bc46e6b2463c3e7ee84532f2"
+    },
+    "flame-1": {
+      "file": "/audio/score/flame-1.ogg",
+      "frames": 54400,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.7,
+      "peak": 0.74138,
+      "rms": 0.07435,
+      "sha256": "0daccdfa99cb4dca9d4801ff919bdf342872db30307f4ff75e33993ecd96c7c4"
+    },
+    "crush-1": {
+      "file": "/audio/score/crush-1.ogg",
+      "frames": 51200,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.6,
+      "peak": 0.67055,
+      "rms": 0.052,
+      "sha256": "3322bf5e659235d4410c274a7adbc382ac1008cf389547538afd3793cd200c00"
+    },
+    "march-1": {
+      "file": "/audio/score/march-1.ogg",
+      "frames": 19200,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 0.6,
+      "peak": 0.68286,
+      "rms": 0.05092,
+      "sha256": "0dd5753e10839bd828393fc33f1fd3090da22e0818c04b9c5988daa46bf05758"
+    },
+    "crown-1": {
+      "file": "/audio/score/crown-1.ogg",
+      "frames": 48000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.5,
+      "peak": 0.59604,
+      "rms": 0.01549,
+      "sha256": "ac079d1808c0aa2f3b847bb1155e341c5717410a61c2cccf928c769e6d70d779"
+    },
+    "swing-2": {
+      "file": "/audio/score/swing-2.ogg",
+      "frames": 14400,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 0.45,
+      "peak": 0.72697,
+      "rms": 0.07996,
+      "sha256": "c95cf71233fc1252ca7640b1c98666b7ec52eeb4270827a0a47493926bccae4b"
+    },
+    "steel-2": {
+      "file": "/audio/score/steel-2.ogg",
+      "frames": 35200,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.1,
+      "peak": 0.52937,
+      "rms": 0.0262,
+      "sha256": "7de217711d1ea8560685bb4c92db1a228d68be720c0aec4cf4b53109f192d21f"
+    },
+    "critical-2": {
+      "file": "/audio/score/critical-2.ogg",
+      "frames": 51200,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.6,
+      "peak": 0.60062,
+      "rms": 0.02989,
+      "sha256": "2330cca2f76dbc05459d80f286e3fe81621a3ef55f25805cf9b432da8c27857d"
+    },
+    "thunder-2": {
+      "file": "/audio/score/thunder-2.ogg",
+      "frames": 80000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 2.5,
+      "peak": 0.85089,
+      "rms": 0.0398,
+      "sha256": "9318f9a2d6e435b6945f8e928b9e10fb02911b03732b6bd84731f30747e8ee3e"
+    },
+    "stampede-2": {
+      "file": "/audio/score/stampede-2.ogg",
+      "frames": 102400,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 3.2,
+      "peak": 0.65019,
+      "rms": 0.04993,
+      "sha256": "9c98191b594a34497bf40adbb18c7b4638ded3f55fb9b4faf3deb77309f361c2"
+    },
+    "arrow-2": {
+      "file": "/audio/score/arrow-2.ogg",
+      "frames": 15360,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 0.48,
+      "peak": 0.46332,
+      "rms": 0.04019,
+      "sha256": "78405eb9f673a5e6abea6719a6bc27444ea0edc79912428cc8596b053b450ef4"
+    },
+    "arrow-hit-2": {
+      "file": "/audio/score/arrow-hit-2.ogg",
+      "frames": 20800,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 0.65,
+      "peak": 0.43021,
+      "rms": 0.03756,
+      "sha256": "8f1b622060ffb48f5432010f4e15f7c5a7d8a3583b507bb8de82c871a19041ad"
+    },
+    "rifle-2": {
+      "file": "/audio/score/rifle-2.ogg",
+      "frames": 32000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.0,
+      "peak": 0.71163,
+      "rms": 0.03146,
+      "sha256": "86f2a91cfbddaa3cf9426d6dd78096694d56b4b7dba958acfd2ee8481ff424d8"
+    },
+    "shotgun-2": {
+      "file": "/audio/score/shotgun-2.ogg",
+      "frames": 41600,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.3,
+      "peak": 0.77296,
+      "rms": 0.03446,
+      "sha256": "1e5946afaf3d0dcca766e78b8393026fdb3cc83e9e1797efe3cf61bfcb88a512"
+    },
+    "cannon-2": {
+      "file": "/audio/score/cannon-2.ogg",
+      "frames": 70400,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 2.2,
+      "peak": 0.84134,
+      "rms": 0.05528,
+      "sha256": "6d2860f79c428d245385cf6fa93319da0f1494cd0dc444d43c0ad9e8d02f493a"
+    },
+    "explosion-2": {
+      "file": "/audio/score/explosion-2.ogg",
+      "frames": 89600,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 2.8,
+      "peak": 0.77699,
+      "rms": 0.06649,
+      "sha256": "a663829f0e20a6472ff99da12692c3bab00336749b92c523eebe484546c7216e"
+    },
+    "meteor-2": {
+      "file": "/audio/score/meteor-2.ogg",
+      "frames": 112000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 3.5,
+      "peak": 0.92332,
+      "rms": 0.06144,
+      "sha256": "e8df5152f4c568980bb5b5e22818da1a1cd1aa7d587ac491577b3af6d412864f"
+    },
+    "quake-2": {
+      "file": "/audio/score/quake-2.ogg",
+      "frames": 108800,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 3.4,
+      "peak": 0.85471,
+      "rms": 0.05458,
+      "sha256": "6fc17f38298738f3659ac56a691bdf7c2185c5b7923a7819ab6f3744764aac8e"
+    },
+    "flame-2": {
+      "file": "/audio/score/flame-2.ogg",
+      "frames": 54400,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.7,
+      "peak": 0.80356,
+      "rms": 0.07362,
+      "sha256": "d6fcb0cc3d1bcb4e8ae465f2169ce5bb5c5ce09cb61b2592996bfa85a766cdc1"
+    },
+    "crush-2": {
+      "file": "/audio/score/crush-2.ogg",
+      "frames": 51200,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.6,
+      "peak": 0.60317,
+      "rms": 0.05347,
+      "sha256": "f711b7323b592c0dd6809a353aae0b15bac48fdb70f58a1a737a7081af1b979a"
+    },
+    "march-2": {
+      "file": "/audio/score/march-2.ogg",
+      "frames": 19200,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 0.6,
+      "peak": 0.50073,
+      "rms": 0.03157,
+      "sha256": "edecc5bd9189ab4f865c49346432bc3f2f5189b102454538e84903f96b1fe489"
+    },
+    "crown-2": {
+      "file": "/audio/score/crown-2.ogg",
+      "frames": 48000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 1.5,
+      "peak": 0.5923,
+      "rms": 0.01556,
+      "sha256": "7d9829fe3d48bee35b926eae08edfc8e42882a95b538532658d77df514063b29"
+    },
+    "heal": {
+      "file": "/audio/score/heal.ogg",
+      "frames": 64000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 2.0,
+      "peak": 0.25801,
+      "rms": 0.02301,
+      "sha256": "a0d202b62df2b622f9173669a8254d3c2e83cb35900735dfb8132ac5c57bcd98"
+    },
+    "shield": {
+      "file": "/audio/score/shield.ogg",
+      "frames": 64000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 2.0,
+      "peak": 0.27936,
+      "rms": 0.02944,
+      "sha256": "04b8735955093a08014f2b1351bf31d88241782f0427a6658696c71c4d7ee64a"
+    },
+    "summon": {
+      "file": "/audio/score/summon.ogg",
+      "frames": 64000,
+      "sampleRate": 32000,
+      "channels": 2,
+      "duration": 2.0,
+      "peak": 0.38926,
+      "rms": 0.07677,
+      "sha256": "a1c7f662ad4e470d2282c984b6212b23555f5f84ceb04f9843de7f690931fadd"
+    },
+    "theme": {
+      "file": "/audio/score/theme.ogg",
+      "frames": 2728055,
+      "sampleRate": 24000,
+      "channels": 2,
+      "duration": 113.66895833333334,
+      "peak": 0.797074,
+      "rms": 0.19634,
+      "sha256": "8b1be922e2df8f5d84756786b3297741ef658041469edc01946f3737b6713268"
+    },
+    "drive": {
+      "file": "/audio/score/drive.ogg",
+      "frames": 2728055,
+      "sampleRate": 24000,
+      "channels": 2,
+      "duration": 113.66895833333334,
+      "peak": 0.370587,
+      "rms": 0.059211,
+      "sha256": "dbceb9b5c956e2e53d1c2dbb95fb34e642d0cafcbbb221c030660737d1bbf5a8"
+    }
+  },
+  "layers": [
+    "theme",
+    "drums",
+    "drive"
+  ],
+  "source": {
+    "title": "JRPG Epic Rock Battle Theme #1",
+    "author": "HydroGene",
+    "license": "CC0-1.0",
+    "page": "https://opengameart.org/content/jrpg-epic-rock-battle-theme-1",
+    "url": "https://opengameart.org/sites/default/files/jrpg_battle_loop.mp3",
+    "sha256": "006be3310cb9a2612384b99d8087035904eaad45f285a4f74170ff7ec6ca7f81",
+    "use": "loop-only stereo master; harmonic/percussive and frequency masks; no intro"
+  }
+}

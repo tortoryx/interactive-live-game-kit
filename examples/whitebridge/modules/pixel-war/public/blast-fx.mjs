@@ -1,0 +1,20 @@
+// Reusable, locally assembled pixel particles. No generated images or per-frame bitmaps.
+export const HEAVY_EFFECTS=['explosion','meteor','slam','quake','flame','volley'];
+const sprites=new Map();
+function puff(color,light,shadow){const key=color;if(sprites.has(key))return sprites.get(key);const s=document.createElement('canvas');s.width=s.height=64;const c=s.getContext('2d');
+ const disk=(x,y,r,col)=>{c.fillStyle=col;for(let yy=-r;yy<r;yy+=3){const w=Math.floor(Math.sqrt(Math.max(0,r*r-yy*yy))/3)*3;c.fillRect(x-w,y+yy,w*2,3);}};
+ disk(32,34,26,shadow);disk(27,29,23,color);disk(38,25,19,color);disk(24,21,14,light);disk(40,20,10,light);sprites.set(key,s);return s;}
+const heat=[['#fff4bd','#ffffff','#ffd77e'],['#ffc45e','#ffe79e','#ea7339'],['#ee793e','#ffb857','#a74332'],['#665653','#87736b','#3c373c']];
+const smoke=[['#716760','#a49680','#494849'],['#706a66','#958b7c','#46454a']];
+const palette=t=>t==='volley'?'#b3edff':t==='slam'||t==='quake'?'#dcc7a0':'#ffb669';
+function bolt(c,from,to,seed){c.beginPath();c.moveTo(from.x,from.y);for(let i=1;i<=6;i++){const t=i/6,offset=i===6?0:Math.sin(seed+i*13)*18;c.lineTo(from.x+(to.x-from.x)*t+offset,from.y+(to.y-from.y)*t);}c.stroke();}
+export function drawBlast(c,e,time,opacity=1){const ms=time-e.at;if(ms<0||ms>2300||!HEAVY_EFFECTS.includes(e.type))return;const a=ms/1000,r=e.radius||155,fire=['explosion','meteor','flame'].includes(e.type),thunder=e.type==='volley',focused=!!e.focus;
+ c.save();c.translate(e.x,e.y);const expand=1-Math.exp(-a*9),fade=Math.max(0,1-a/1.1);c.strokeStyle=palette(e.type);c.globalAlpha=(fade)*opacity;c.lineWidth=8*(1-Math.min(.85,a));c.beginPath();c.ellipse(0,0,r*expand,r*.62*expand,0,0,Math.PI*2);c.stroke();
+ if(a<.22){c.globalAlpha=((1-a/.22)*.8)*opacity;c.fillStyle=thunder?'#dffaff':'#fff2c5';c.beginPath();c.ellipse(0,-12,r*.7*expand+14,r*.42*expand+12,0,0,Math.PI*2);c.fill();}
+ // Four layers of hot fragments rise, cool and become smoke. Count stays constant.
+ if(fire){for(let i=0;i<(focused?11:15);i++){const angle=i*2.399,rad=(.22+(i%5)*.17)*r,delay=(i%3)*.045,t=a-delay;if(t<0)continue;const spread=Math.min(1,t*3.5),x=Math.cos(angle)*rad*spread,y=Math.sin(angle)*rad*.48*spread-Math.min(1,t)*62-(i%3)*11,sz=(32+(i%4)*13)*(1+Math.min(1,t)*.5)*(focused?.88:1),phase=Math.min(3,Math.floor(t*(focused?6:4)));c.globalAlpha=(Math.max(0,1-t/(focused?.8:1.7)))*opacity;c.drawImage(puff(...heat[phase]),Math.round(x-sz/2),Math.round(y-sz/2),sz,sz);}}
+ if(a>.2){for(let i=0;i<(focused?4:fire?10:7);i++){const t=a-.2,angle=i*2.399,dist=r*(.3+i%4*.18)*Math.min(1,t*3),size=(30+i%4*12)*(1+t*.45),x=Math.cos(angle)*dist+Math.sin(i)*t*15,y=Math.sin(angle)*dist*.48-t*(fire?51:28);c.globalAlpha=(Math.min(focused?.16:.65,t*3)*Math.max(0,1-t/(focused?.9:2.1)))*opacity;c.drawImage(puff(...smoke[i%2]),Math.round(x-size/2),Math.round(y-size/2),size,size);}}
+ c.globalAlpha=(Math.max(0,1-a/1.25))*opacity;for(let i=0;i<22;i++){const angle=i*2.399,dist=(35+i%5*18)*a,x=Math.cos(angle)*dist,y=Math.sin(angle)*dist*.6-150*a+125*a*a,size=i%3+2;c.fillStyle=i%3===0?'#ffe3a0':fire?'#d17d49':'#8e8879';c.fillRect(Math.round(x),Math.round(y),size*2,size);}
+ if(thunder&&a<.58){const seed=Math.floor(a*24),paths=e.arcs?.length?e.arcs:[{from:{x:e.x,y:e.y-240},to:{x:e.x,y:e.y}}];c.globalAlpha=(Math.max(0,1-a/.58))*opacity;for(const path of paths){const from={x:path.from.x-e.x,y:path.from.y-e.y-24},to={x:path.to.x-e.x,y:path.to.y-e.y-24};c.strokeStyle='#448bab';c.lineWidth=12;bolt(c,from,to,seed);c.strokeStyle='#a6e9fc';c.lineWidth=6;bolt(c,from,to,seed);c.strokeStyle='#f5ffff';c.lineWidth=2;bolt(c,from,to,seed);c.fillStyle='#edffff';c.fillRect(to.x-7,to.y-7,14,14);}}
+ c.restore();}
+export function impactShake(events,time,camera){let strength=0,seed=0;for(const e of events){const age=time-e.at;if(age<0||age>450||!camera.visible(e,80))continue;const s=({explosion:4,meteor:6,slam:4,quake:2,flame:3,volley:2})[e.type]||0;strength=Math.max(strength,s*(1-age/450));seed=e.id;}return {x:Math.round(Math.sin(time*.074+seed)*strength),y:Math.round(Math.cos(time*.097+seed)*strength*.65)};}

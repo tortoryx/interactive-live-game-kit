@@ -1,0 +1,12 @@
+export function supportGlyph(c,kind,x,y,size,color){c.save();c.translate(x,y);c.scale(size/20,size/20);c.fillStyle=color;c.strokeStyle=color;c.lineWidth=2;
+ if(['royal_heal','royal_restore','royal_vitality'].includes(kind)){c.fillRect(-3,-9,6,18);c.fillRect(-9,-3,18,6);if(kind==='royal_restore'){c.strokeRect(-12,-12,24,24);}}
+ else if(kind==='royal_guard'){c.beginPath();c.moveTo(-9,-9);c.lineTo(9,-9);c.lineTo(7,5);c.lineTo(0,11);c.lineTo(-7,5);c.closePath();c.stroke();c.fillRect(-2,-5,4,10);}
+ else{c.beginPath();c.moveTo(1,-11);c.lineTo(-7,2);c.lineTo(0,1);c.lineTo(-2,11);c.lineTo(9,-4);c.lineTo(2,-3);c.closePath();c.fill();}c.restore();}
+const buffs={vitality:['royal_vitality','生命 +20%','#bbf1a2'],power:['royal_power','攻击 +40%','#ffc17b'],guard:['royal_guard','减伤 35%','#b3e9ff']};
+export function drawCommanderSupport(c,state,camera){if(state.mode==='settlement')return;for(const h of [...Object.values(state.heroes),...state.units.filter(u=>u.commander)]){
+ if(h.hp<=0)continue;const p=camera.project(h);if(p.x<0||p.x>camera.screenW||p.y<0||p.y>camera.screenH)continue;
+ const last=h.lastSupport,age=last?(state.time-last.at)/1000:100;
+ if(last&&age>=0&&age<3.5){const color=last.side===camera.side?'#c4ffb5':'#ff9f87';c.save();c.translate(p.x,p.y);c.globalAlpha=Math.min(1,(3.5-age)*2);if(age<1.6){c.globalAlpha*=1-age/1.6;c.strokeStyle=color;c.lineWidth=last.kind==='royal_restore'?4:2;const r=25+age*45;c.beginPath();c.ellipse(0,0,r,r*.36,0,0,Math.PI*2);c.stroke();for(let i=0;i<8;i++){const a=i*Math.PI/4;supportGlyph(c,last.kind,Math.cos(a)*r,-12+Math.sin(a)*r*.4-age*30,8,color);}}
+ c.globalAlpha=Math.min(1,(3.5-age)*2);c.font='bold 11px sans-serif';c.textAlign='center';c.lineWidth=3;c.strokeStyle='#18231e';c.fillStyle=color;const label=(last.owner.name||'观众').slice(0,7)+' · '+last.name+(last.amount>0?(last.kind==='royal_strike'?' −':' +')+Math.round(last.amount):'');c.strokeText(label,0,-78);c.fillText(label,0,-78);c.restore();}
+ const active=Object.entries(h.commanderBuffs||{}).filter(([key,b])=>buffs[key]&&b.until>state.time);if(!active.length)continue;c.save();c.font='bold 9px sans-serif';c.textAlign='left';c.lineWidth=3;c.strokeStyle='#15291f';for(const [i,[key,b]] of active.entries()){const [kind,label,color]=buffs[key],x=p.x-46,y=p.y+29+i*15;supportGlyph(c,kind,x,y-3,10,color);const t=label+' '+Math.ceil((b.until-state.time)/1000)+'s';c.strokeText(t,x+9,y);c.fillStyle=color;c.fillText(t,x+9,y);}c.restore();
+}}

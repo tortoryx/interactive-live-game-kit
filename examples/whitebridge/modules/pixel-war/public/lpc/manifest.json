@@ -1,0 +1,822 @@
+{
+  "revision": "d44ea7d6904891aab8627b80ff4de1560d63bdff",
+  "parts": {
+    "body": {
+      "walk": {
+        "file": "/lpc/body-walk.png",
+        "source": "body/bodies/male/walk.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "1e0e8f0c11ba5f4f7b3d4439fc416802b4227da2fe146c13de3de254d9f87f77"
+      },
+      "slash": {
+        "file": "/lpc/body-slash.png",
+        "source": "body/bodies/male/slash.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "662e208502b0f060041cd3e8c65b6445117f174e9435b68e619b874e36b0069d"
+      },
+      "thrust": {
+        "file": "/lpc/body-thrust.png",
+        "source": "body/bodies/male/thrust.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "9e08026c201c3dac2f99b6d48e41ba9232828df3e9ebb2b0cb4e6fe9acc220e3"
+      },
+      "shoot": {
+        "file": "/lpc/body-shoot.png",
+        "source": "body/bodies/male/shoot.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "9657e0fa29b1974976b037f336625ae5d346554453b81a29d013b9289316961f"
+      },
+      "hurt": {
+        "file": "/lpc/body-hurt.png",
+        "source": "body/bodies/male/hurt.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "417684c67b26467347953542069791af43a607008ddcb9f444a53aca3e10b820"
+      }
+    },
+    "head": {
+      "walk": {
+        "file": "/lpc/head-walk.png",
+        "source": "head/heads/human/male/walk.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "7e863954dc8c3c748d0727415c39888106bdd3779beb2e3b18011a3a9ef3e53c"
+      },
+      "slash": {
+        "file": "/lpc/head-slash.png",
+        "source": "head/heads/human/male/slash.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "cf804e711fe210351eccd474297c25dbc99ddbf64cf5384b129d044fb93f6fc4"
+      },
+      "thrust": {
+        "file": "/lpc/head-thrust.png",
+        "source": "head/heads/human/male/thrust.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "de941b85fea3b1ac1f49f36c929d86e1f2c17d68509dfc7b252e3981a5ac114c"
+      },
+      "shoot": {
+        "file": "/lpc/head-shoot.png",
+        "source": "head/heads/human/male/shoot.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "be14f60e4335249d88af8f46971060a52fb7d4407869c15f67f26c6890347d6f"
+      },
+      "hurt": {
+        "file": "/lpc/head-hurt.png",
+        "source": "head/heads/human/male/hurt.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "f1efa6975eed037351ff274abc195f69fb0b62fc2b9faa9cb89d0a025f463d0d"
+      }
+    },
+    "elder": {
+      "walk": {
+        "file": "/lpc/elder-walk.png",
+        "source": "head/heads/human/male_elderly/walk.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "4d23bd0f66514d1b56760d576f0a4b73b1c9731976931b4f51434bb0eb45a904"
+      },
+      "slash": {
+        "file": "/lpc/elder-slash.png",
+        "source": "head/heads/human/male_elderly/slash.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "afb2a6732684110fb51cc0e1d03d9e90bf8a873dfb8f5bce7ebbc0cb18bda9ec"
+      },
+      "thrust": {
+        "file": "/lpc/elder-thrust.png",
+        "source": "head/heads/human/male_elderly/thrust.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "bcfba5be3644787eb14646de97bbaf5d23c6c13c881861c6a7f5ef9d4f08a4c6"
+      },
+      "shoot": {
+        "file": "/lpc/elder-shoot.png",
+        "source": "head/heads/human/male_elderly/shoot.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "d60c4be33a04cc3a3de54d8241b5b2ea9e072fd69cb626488847134fddaa29ed"
+      },
+      "hurt": {
+        "file": "/lpc/elder-hurt.png",
+        "source": "head/heads/human/male_elderly/hurt.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "8e36eea6c801baaec47af7bd4dda0a37ca4c8cc5b8d029f914bc55a26ae74133"
+      }
+    },
+    "pants": {
+      "walk": {
+        "file": "/lpc/pants-walk.png",
+        "source": "legs/pants/male/walk.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "2de5a3247743ffa37febdf3464cc0a83e79f64d1028aed410832ee29bea850b6"
+      },
+      "slash": {
+        "file": "/lpc/pants-slash.png",
+        "source": "legs/pants/male/slash.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "0c324cb85970493872400e1e161ef8a246fda5013967253b6933cea909674c9a"
+      },
+      "thrust": {
+        "file": "/lpc/pants-thrust.png",
+        "source": "legs/pants/male/thrust.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "f1d9a019a9bfea4c31397d2c907df1d35f0bf95c837df629358b04a824ea18c3"
+      },
+      "shoot": {
+        "file": "/lpc/pants-shoot.png",
+        "source": "legs/pants/male/shoot.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "03940d06e15bff2b801deadaa4d2a60e29bcd93bcbe69ffceeb7424cb3515f7b"
+      },
+      "hurt": {
+        "file": "/lpc/pants-hurt.png",
+        "source": "legs/pants/male/hurt.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "c9eac3fcea709049bd85e10b0bfb9ad73c557c423ebf4211995af1c6b917e9c5"
+      }
+    },
+    "boots": {
+      "walk": {
+        "file": "/lpc/boots-walk.png",
+        "source": "feet/boots/basic/male/walk.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "13521e96fe8c6033c54622a8137cc1a05964a9db3bd1f5a115028951e5cecf18"
+      },
+      "slash": {
+        "file": "/lpc/boots-slash.png",
+        "source": "feet/boots/basic/male/slash.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "ac90bfe3e272ac6c404c43f249006421e823a44ae747efc9ac01a53ad06abeef"
+      },
+      "thrust": {
+        "file": "/lpc/boots-thrust.png",
+        "source": "feet/boots/basic/male/thrust.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "13521e96fe8c6033c54622a8137cc1a05964a9db3bd1f5a115028951e5cecf18"
+      },
+      "shoot": {
+        "file": "/lpc/boots-shoot.png",
+        "source": "feet/boots/basic/male/shoot.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "877b7c3fbbfdb722c314a6120ae977704cfa5644eac831804a6b8110eb5f70c6"
+      },
+      "hurt": {
+        "file": "/lpc/boots-hurt.png",
+        "source": "feet/boots/basic/male/hurt.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "4cf70ec2e4f496f5fd5a27be37ea58dc2e1ff57956ddd58700b3c7bb9d4708ae"
+      }
+    },
+    "leather": {
+      "walk": {
+        "file": "/lpc/leather-walk.png",
+        "source": "torso/armour/leather/male/walk.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "160490073860adb9bc702716f5df0f8e01e2fb8f3a6a2b2aaa0343d131c7477c"
+      },
+      "slash": {
+        "file": "/lpc/leather-slash.png",
+        "source": "torso/armour/leather/male/slash.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "9a7d2d8daf8a0ef4a69c555327b84b64ddace6e37f4ba98bdeb4cd2ea024f2a0"
+      },
+      "thrust": {
+        "file": "/lpc/leather-thrust.png",
+        "source": "torso/armour/leather/male/thrust.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "fd194ff445ccd1874be4e05dcfddaa69358a65d52035f8b07ad75aae6d6075fc"
+      },
+      "shoot": {
+        "file": "/lpc/leather-shoot.png",
+        "source": "torso/armour/leather/male/shoot.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "67c3a7f1e4fa97d9a1edc37b054c82743587fb3996fbbff4ea15ccbb54111d2d"
+      },
+      "hurt": {
+        "file": "/lpc/leather-hurt.png",
+        "source": "torso/armour/leather/male/hurt.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "8dd2bddf981d0a92158dba761f0a9bc95e18bafb18625c502d23d795a747fc48"
+      }
+    },
+    "plate": {
+      "walk": {
+        "file": "/lpc/plate-walk.png",
+        "source": "torso/armour/plate/male/walk.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "4ef811417e7c1163b8da47aa48afd80b398302b18d4ee90c6fbb79667b9cc046"
+      },
+      "slash": {
+        "file": "/lpc/plate-slash.png",
+        "source": "torso/armour/plate/male/slash.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "545015e4127f4100d3023b6fa447c724ae70c9aa9b949a37e8ae84bfc94b94ef"
+      },
+      "thrust": {
+        "file": "/lpc/plate-thrust.png",
+        "source": "torso/armour/plate/male/thrust.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "327fe6dc9bdeccfc17fc158e72446414f5fcb6f9e4b78df42e09bf9bb7f77fbf"
+      },
+      "shoot": {
+        "file": "/lpc/plate-shoot.png",
+        "source": "torso/armour/plate/male/shoot.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "31c565fdc60dc5bf8ad1e14fdd1272ee9e388c4902613e02a1a0a2e0b42f933f"
+      },
+      "hurt": {
+        "file": "/lpc/plate-hurt.png",
+        "source": "torso/armour/plate/male/hurt.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "240cec967f141f10ccba591a427728f582f4125135331bb161114a718965d295"
+      }
+    },
+    "mail": {
+      "walk": {
+        "file": "/lpc/mail-walk.png",
+        "source": "torso/armour/legion/male/walk.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "0c0384fd6dbfac23e3f9a116ee6af1a462259979fec3d9b1767d00a12a6974f8"
+      },
+      "slash": {
+        "file": "/lpc/mail-slash.png",
+        "source": "torso/armour/legion/male/slash.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "a8ec36655becdf10e0ea0a2ee745b871e9b5077be4c04ca2b8c0b84a533a74ae"
+      },
+      "thrust": {
+        "file": "/lpc/mail-thrust.png",
+        "source": "torso/armour/legion/male/thrust.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "83b8e12e929d56094953b57d4f42c5cbdb4f99406efe3ca8c7c39893891ed0c1"
+      },
+      "shoot": {
+        "file": "/lpc/mail-shoot.png",
+        "source": "torso/armour/legion/male/shoot.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "0b2961d99f49f759af64dc7db8d2eb7d1f69b60d3fd4ac44f0e6638e11f3eb48"
+      },
+      "hurt": {
+        "file": "/lpc/mail-hurt.png",
+        "source": "torso/armour/legion/male/hurt.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "6603de8aa8d8ef5e6f2dc9fa9c5f942d4dc146fd0974e7c87f3b5347154c18db"
+      }
+    },
+    "robe": {
+      "walk": {
+        "file": "/lpc/robe-walk.png",
+        "source": "torso/clothes/longsleeve/longsleeve/male/walk.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "8b1c79d535d7a233371c9398ca51b196aa8fdf06117bd0eafd7fbcbf438d711b"
+      },
+      "slash": {
+        "file": "/lpc/robe-slash.png",
+        "source": "torso/clothes/longsleeve/longsleeve/male/slash.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "2a2a872196d4636f00bdda8ef642a2acac0c463f1b29c228f97696d3ffff08e3"
+      },
+      "thrust": {
+        "file": "/lpc/robe-thrust.png",
+        "source": "torso/clothes/longsleeve/longsleeve/male/thrust.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "1e79978e7dfb161c778e65cec909f6470d7b59d9d266231ffdb056aeb2d25eb7"
+      },
+      "shoot": {
+        "file": "/lpc/robe-shoot.png",
+        "source": "torso/clothes/longsleeve/longsleeve/male/shoot.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "22a2fde38a71a481ab31f51f7080ea364bd314dee356f75e7a267fa1880f4fda"
+      },
+      "hurt": {
+        "file": "/lpc/robe-hurt.png",
+        "source": "torso/clothes/longsleeve/longsleeve/male/hurt.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "137e28434f07cb35ac06c0f79e8c9e4fe2a65b4c3250d7a0ed6a3b754b13cd74"
+      }
+    },
+    "hair": {
+      "walk": {
+        "file": "/lpc/hair-walk.png",
+        "source": "hair/messy1/adult/walk.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "a3f389578b71cabf457a8f1e617e232ce8104c2f1371f44fafe947d5070d7fca"
+      },
+      "slash": {
+        "file": "/lpc/hair-slash.png",
+        "source": "hair/messy1/adult/slash.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "90c19a9790426495bd5182330e437a2b93c21f48ce128e6615becad9e67e064c"
+      },
+      "thrust": {
+        "file": "/lpc/hair-thrust.png",
+        "source": "hair/messy1/adult/thrust.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "edfdc31b743823966afa4549627c8067f1caf545f841c7b058437ed94240c11d"
+      },
+      "shoot": {
+        "file": "/lpc/hair-shoot.png",
+        "source": "hair/messy1/adult/shoot.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "6243a090e97a81ffb938e44a354d5266d3ac4b85baf0ce34d5a1447912f8c955"
+      },
+      "hurt": {
+        "file": "/lpc/hair-hurt.png",
+        "source": "hair/messy1/adult/hurt.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "89dbbaa62e2d1d758e4b0d409dabf1ec647943a5cb0465172bd936611a01e21e"
+      }
+    },
+    "helmet": {
+      "walk": {
+        "file": "/lpc/helmet-walk.png",
+        "source": "hat/helmet/armet/adult/walk.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "6be54856a2742d56cf88c2a2f9eb62ce4de0682f3314357eeeec8d72a7da9f9b"
+      },
+      "slash": {
+        "file": "/lpc/helmet-slash.png",
+        "source": "hat/helmet/armet/adult/slash.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "1a94705bb395e4a58f9082da1c5630cf0f7dd2dd816b2a0a33c8f2a0a9f0886e"
+      },
+      "thrust": {
+        "file": "/lpc/helmet-thrust.png",
+        "source": "hat/helmet/armet/adult/thrust.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "3a422aef9ae64e2bfc033c5754918dd73f7fcef4444d53d0301690de05f30671"
+      },
+      "shoot": {
+        "file": "/lpc/helmet-shoot.png",
+        "source": "hat/helmet/armet/adult/shoot.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "9f2a225c4fb7613941b6c3ee4ea5685d7a6d0198a190ad9edc2861f4fc452758"
+      },
+      "hurt": {
+        "file": "/lpc/helmet-hurt.png",
+        "source": "hat/helmet/armet/adult/hurt.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "15607d08919566cb3862baf10618d59e13340e88c0f196893149e2a89bb84e81"
+      }
+    },
+    "hood": {
+      "walk": {
+        "file": "/lpc/hood-walk.png",
+        "source": "hat/cloth/hood/adult/walk.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "9fdab38441d1489abfcabfaf87a80ac902179cd1a56efa8d3104344e0f710acb"
+      },
+      "slash": {
+        "file": "/lpc/hood-slash.png",
+        "source": "hat/cloth/hood/adult/slash.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "97bf330847366a36cc773ae88d8b08ff91d3fe1ed610b58299301cd5104fe7e9"
+      },
+      "thrust": {
+        "file": "/lpc/hood-thrust.png",
+        "source": "hat/cloth/hood/adult/thrust.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "2c4a59b89d260a81f9acefc35e9d6fbc15bb2023cb6821fd80989be1e335ed9a"
+      },
+      "shoot": {
+        "file": "/lpc/hood-shoot.png",
+        "source": "hat/cloth/hood/adult/shoot.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "06ddd84ae6dda3b65858e71e9495b83151bb8855e63fc2aab8b45c12336ada62"
+      },
+      "hurt": {
+        "file": "/lpc/hood-hurt.png",
+        "source": "hat/cloth/hood/adult/hurt.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "6687ca529792986cbcab783849f2cf8559b7bf9b1f428fda7794f8a0b048828b"
+      }
+    },
+    "horns": {
+      "walk": {
+        "file": "/lpc/horns-walk.png",
+        "source": "head/horns/curled/adult/walk.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "cfc93d655bdc56d7a94a71a2d94008562940d27a8fdd3e963b6da91aab62ee17"
+      },
+      "slash": {
+        "file": "/lpc/horns-slash.png",
+        "source": "head/horns/curled/adult/slash.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "d16dc933a1550a8dc3e1f383e64a06925ea7d1756ce2f5c86dd527b4e8a16b01"
+      },
+      "thrust": {
+        "file": "/lpc/horns-thrust.png",
+        "source": "head/horns/curled/adult/thrust.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "76c8ee223ee30cd3c10b9511f4921103ed44e477f1bbee6c710eacc3fb7f79f4"
+      },
+      "shoot": {
+        "file": "/lpc/horns-shoot.png",
+        "source": "head/horns/curled/adult/shoot.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "eb859c7416ca4cbe034a3a6cfad3c4dd2855121b35a97b9346d99456afb9893d"
+      },
+      "hurt": {
+        "file": "/lpc/horns-hurt.png",
+        "source": "head/horns/curled/adult/hurt.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "f2ff2a7b9ed22e0cf0d403b4af5b7ece9830a2d857787b782e35c2f76106f539"
+      }
+    },
+    "beard": {
+      "walk": {
+        "file": "/lpc/beard-walk.png",
+        "source": "beards/beard/basic/walk.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "b0ecd4a9429925be32961407934db7dc528c8af36022ec13b6488e59c9a2d11e"
+      },
+      "slash": {
+        "file": "/lpc/beard-slash.png",
+        "source": "beards/beard/basic/slash.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "90baa44e2a9b4581cba927bcb14eccb80b6b470bde585951901a900ad7ddda11"
+      },
+      "thrust": {
+        "file": "/lpc/beard-thrust.png",
+        "source": "beards/beard/basic/thrust.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "8cb252d1f848982ddbedba943e86c0bf4f4da1a76f0463f619bd278a9ffa369e"
+      },
+      "shoot": {
+        "file": "/lpc/beard-shoot.png",
+        "source": "beards/beard/basic/shoot.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "60f3c8dabb12f76dcbab82aecb66d535a0584cb03b7585ff34273bf2027d0ad4"
+      },
+      "hurt": {
+        "file": "/lpc/beard-hurt.png",
+        "source": "beards/beard/basic/hurt.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "ee9ab76484cb88f92f7c6ef6dd2c22944e046461d26b610a27439873b0a05887"
+      }
+    },
+    "shield": {
+      "walk": {
+        "file": "/lpc/shield-walk.png",
+        "source": "shield/kite/male/walk/kite_gray.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "896faa23200286ab6d20d20d7c14aedd4d494b95b11dcd8fe466e5f38aaf4525"
+      },
+      "slash": {
+        "file": "/lpc/shield-slash.png",
+        "source": "shield/kite/male/slash/kite_gray.png",
+        "width": 384,
+        "height": 256,
+        "sha256": "f92631aff52042dbad0eafe9d1af3de3587c1c944269f2b1018718c5d30998aa"
+      },
+      "thrust": {
+        "file": "/lpc/shield-thrust.png",
+        "source": "shield/kite/male/thrust/kite_gray.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "2cb011236cf26aa8176cf4485a6c93f62e01f095e84edde6291fef352b22d992"
+      }
+    },
+    "swordFg": {
+      "walk": {
+        "file": "/lpc/swordFg-walk.png",
+        "source": "weapon/sword/longsword/walk/longsword.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "1acf3b8c0566b07e03e538d920722e916f2221846f69f5e4c585dfb07102ce4f"
+      },
+      "hurt": {
+        "file": "/lpc/swordFg-hurt.png",
+        "source": "weapon/sword/longsword/hurt/longsword.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "8fc3c5cb4b418829aea832436f0bb4c11294e75f162450fad09447bad12289b0"
+      },
+      "slash": {
+        "file": "/lpc/swordFg-slash.png",
+        "source": "weapon/sword/longsword/attack_slash/longsword.png",
+        "width": 1152,
+        "height": 768,
+        "sha256": "8029f684fa9275bd459cafe5427a6d06a63bed4aa43d643537d75ca56db88fcd"
+      }
+    },
+    "swordBg": {
+      "walk": {
+        "file": "/lpc/swordBg-walk.png",
+        "source": "weapon/sword/longsword/universal_behind/walk/longsword.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "33a2c1ce3751c7fb83b61352ac3d93f2a31e5b36c802ec515304bd6837f31fce"
+      },
+      "hurt": {
+        "file": "/lpc/swordBg-hurt.png",
+        "source": "weapon/sword/longsword/universal_behind/hurt/longsword.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "d237491b844d4cca9cf710f9ef2efa0be13b3eecdb3dcbbfc4eb954ef90058c5"
+      },
+      "slash": {
+        "file": "/lpc/swordBg-slash.png",
+        "source": "weapon/sword/longsword/attack_slash/behind/longsword.png",
+        "width": 1152,
+        "height": 768,
+        "sha256": "a6a738ecf97a667feac2e5854a3b8030d22e0a9ff8e8034037d80aa8fd49ac47"
+      }
+    },
+    "maceFg": {
+      "walk": {
+        "file": "/lpc/maceFg-walk.png",
+        "source": "weapon/blunt/mace/walk/mace.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "5de80e7e7846112ff0e181b53936d884da507c9a81c6c79febe8ca0c64606898"
+      },
+      "hurt": {
+        "file": "/lpc/maceFg-hurt.png",
+        "source": "weapon/blunt/mace/hurt/mace.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "4842f631d82e9316cfa9f96d13846070b7e36b58cb283230cac191e9b64f9a5c"
+      },
+      "slash": {
+        "file": "/lpc/maceFg-slash.png",
+        "source": "weapon/blunt/mace/attack_slash/mace.png",
+        "width": 1152,
+        "height": 768,
+        "sha256": "c6727a30d8cfebcacf9dba4c70ad993ecada6c9d75ca524e14803cf2fd9634f8"
+      }
+    },
+    "maceBg": {
+      "walk": {
+        "file": "/lpc/maceBg-walk.png",
+        "source": "weapon/blunt/mace/universal_behind/walk/mace.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "74ee467cb765c938c8fb662ed435cf27112fe1e59d7a1991670907c29bb2341e"
+      },
+      "hurt": {
+        "file": "/lpc/maceBg-hurt.png",
+        "source": "weapon/blunt/mace/universal_behind/hurt/mace.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "c980bcbdd974a8b9c38c6f5d587692d50bc1f30a47e36a26daa9d1dead640ae0"
+      },
+      "slash": {
+        "file": "/lpc/maceBg-slash.png",
+        "source": "weapon/blunt/mace/attack_slash/behind/mace.png",
+        "width": 1152,
+        "height": 768,
+        "sha256": "e9c97d28c7108b695614593262b6ac6eec9720f2a4e7411d27d14195062905e1"
+      }
+    },
+    "spearBg": {
+      "walk": {
+        "file": "/lpc/spearBg-walk.png",
+        "source": "weapon/polearm/spear/walk/background.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "9dbe0826fa895678d7d7896ba3a7907e7e835f20f0be8ca30d92633d04651d22"
+      },
+      "thrust": {
+        "file": "/lpc/spearBg-thrust.png",
+        "source": "weapon/polearm/spear/thrust/background.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "937daacec07cf1db37ebc6f9945163b7d48d198d57f0764a902424fb133fffe0"
+      },
+      "hurt": {
+        "file": "/lpc/spearBg-hurt.png",
+        "source": "weapon/polearm/spear/hurt/background.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "7ac26181220cc9e18f0d67d8f484818f823847a07d93e726b2802452d5b77c2b"
+      }
+    },
+    "spearFg": {
+      "walk": {
+        "file": "/lpc/spearFg-walk.png",
+        "source": "weapon/polearm/spear/walk/foreground.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "09cdd1d93ca15041919afb9a6ae1715841f7e68957e3d534cecfc28c61db8a90"
+      },
+      "thrust": {
+        "file": "/lpc/spearFg-thrust.png",
+        "source": "weapon/polearm/spear/thrust/foreground.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "2603545177295f4b06901811b67bebb454211a3bb3c0867e7bf12d32ac518f1c"
+      },
+      "hurt": {
+        "file": "/lpc/spearFg-hurt.png",
+        "source": "weapon/polearm/spear/hurt/foreground.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "c8c62665b35259cece4019b5a7dbe83429f2fb9a3033d5f8eace11890b3a9777"
+      }
+    },
+    "staffBg": {
+      "walk": {
+        "file": "/lpc/staffBg-walk.png",
+        "source": "weapon/magic/crystal/universal/walk/background.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "69d5ac0cf03ace34bcee5b688dfede50f5d9ad6f57e47b6e5e4aa2183e157590"
+      },
+      "thrust": {
+        "file": "/lpc/staffBg-thrust.png",
+        "source": "weapon/magic/crystal/thrust/background.png",
+        "width": 1536,
+        "height": 768,
+        "sha256": "056f482f9f0ba4c1c24954a55144bce8dc4445bcf172255645fd67b12fa67802"
+      },
+      "hurt": {
+        "file": "/lpc/staffBg-hurt.png",
+        "source": "weapon/magic/crystal/universal/hurt/background.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "60f455160f1a8a0e635894265e18cdc8f144d9304cfd2fcd897c54ce1fe38d45"
+      }
+    },
+    "staffFg": {
+      "walk": {
+        "file": "/lpc/staffFg-walk.png",
+        "source": "weapon/magic/crystal/universal/walk/foreground.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "b5b39dd4a199eeec45dc3bde613360184a8319edb6f01c9176b401364472cd40"
+      },
+      "thrust": {
+        "file": "/lpc/staffFg-thrust.png",
+        "source": "weapon/magic/crystal/thrust/foreground.png",
+        "width": 1536,
+        "height": 768,
+        "sha256": "f4c0e14f6843f5d8b1bfea273794db4df689c582fa53d61819de66fc73ccba6a"
+      },
+      "hurt": {
+        "file": "/lpc/staffFg-hurt.png",
+        "source": "weapon/magic/crystal/universal/hurt/foreground.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "9a1c2e6a2d28cef06048ca24fc996abaf7bfd261aed88d5892ffaa122d113589"
+      }
+    },
+    "bowBg": {
+      "walk": {
+        "file": "/lpc/bowBg-walk.png",
+        "source": "weapon/ranged/bow/normal/walk/background.png",
+        "width": 1664,
+        "height": 512,
+        "sha256": "5c1238d537410db3f201789a4c3c0aa75f736e0bfb5cd2909f880c09e1e69a65"
+      },
+      "shoot": {
+        "file": "/lpc/bowBg-shoot.png",
+        "source": "weapon/ranged/bow/normal/universal/shoot/background.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "e452898813a48ec719641cd17be1b3b9b4a5ac973dc2d4b01f67293511b9d87a"
+      },
+      "hurt": {
+        "file": "/lpc/bowBg-hurt.png",
+        "source": "weapon/ranged/bow/normal/universal/hurt/background.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "6e903f6dc0b100b3bf49f86b711526b0aeb96ec00e3e9dc6f0448bddf8498c25"
+      }
+    },
+    "bowFg": {
+      "walk": {
+        "file": "/lpc/bowFg-walk.png",
+        "source": "weapon/ranged/bow/normal/walk/foreground.png",
+        "width": 1664,
+        "height": 512,
+        "sha256": "765fbf28d5a52960a42eaa0fbff7e17cea7da70bd9dfda74d2cf3ed6ba0b35f2"
+      },
+      "shoot": {
+        "file": "/lpc/bowFg-shoot.png",
+        "source": "weapon/ranged/bow/normal/universal/shoot/foreground.png",
+        "width": 832,
+        "height": 256,
+        "sha256": "c2e56a05d362edaf47b09483acdaf93d89a9218a357b4fb1457440467e63a005"
+      },
+      "hurt": {
+        "file": "/lpc/bowFg-hurt.png",
+        "source": "weapon/ranged/bow/normal/universal/hurt/foreground.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "823d0349bc69c0e52e08ba7227044af16d453cb6353e0d71d1f898506878977d"
+      }
+    },
+    "staffWoodBg": {
+      "walk": {
+        "file": "/lpc/staffWoodBg-walk.png",
+        "source": "weapon/magic/simple/background/walk/simple.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "355575e5028ffcc3491884462e41a0be621ae5a1f8516de6639375d578ec6fbc"
+      },
+      "thrust": {
+        "file": "/lpc/staffWoodBg-thrust.png",
+        "source": "weapon/magic/simple/background/thrust/simple.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "97b2cbbf57d61089c37601410c440716b6d82db185954113bd51c339ea45915e"
+      },
+      "hurt": {
+        "file": "/lpc/staffWoodBg-hurt.png",
+        "source": "weapon/magic/simple/background/hurt/simple.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "d9390c89dac2c00e6953417977f0cd8dfe1642de9b6fc5f762d348f8310b7584"
+      }
+    },
+    "staffWoodFg": {
+      "walk": {
+        "file": "/lpc/staffWoodFg-walk.png",
+        "source": "weapon/magic/simple/foreground/walk/simple.png",
+        "width": 576,
+        "height": 256,
+        "sha256": "0ae97f66d5c81bdc246fd7dad5556523a8699b658e6a4ce46f0ecdcdf901e4f9"
+      },
+      "thrust": {
+        "file": "/lpc/staffWoodFg-thrust.png",
+        "source": "weapon/magic/simple/foreground/thrust/simple.png",
+        "width": 512,
+        "height": 256,
+        "sha256": "c68a3701086320795cfa115b9ef260df2fbf3572f5ed2b97108a562dee50f130"
+      },
+      "hurt": {
+        "file": "/lpc/staffWoodFg-hurt.png",
+        "source": "weapon/magic/simple/foreground/hurt/simple.png",
+        "width": 384,
+        "height": 64,
+        "sha256": "19400d8642cefa7c23d9ce1cbf9bc8525989d5fedc130830d983fee34f5217e6"
+      }
+    }
+  }
+}

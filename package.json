@@ -1,0 +1,25 @@
+{
+  "name": "interactive-live-game-kit",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "description": "A bilingual guide and runnable reference for building AI-enabled interactive livestream games.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.11.0"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env scripts/start.mjs",
+    "test": "node scripts/test.mjs",
+    "privacy:check": "python3 scripts/release.py check",
+    "release": "python3 scripts/release.py build",
+    "obs:export": "node scripts/obs-export.mjs",
+    "docs:check": "python3 scripts/check-docs.py",
+    "host:install": "node scripts/install-host.mjs",
+    "voice:install": "python3 scripts/install-voice.py",
+    "test:full": "node scripts/test.mjs --full"
+  },
+  "dependencies": {
+    "javascript-astar": "0.4.1"
+  }
+}

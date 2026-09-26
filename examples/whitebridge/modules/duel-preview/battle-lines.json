@@ -1,0 +1,206 @@
+{
+  "demonReady": {
+    "side": "demon",
+    "text": "人类军队到桥上了。跟紧我，别让他们拆了粮仓！",
+    "speaker": "Eric",
+    "emotion": "成年男子，嘴硬但认真，临场喊话，短促自然"
+  },
+  "humanReady": {
+    "side": "human",
+    "text": "我们是来救人的。先把对面那个戴皇冠的打趴下！",
+    "speaker": "Dylan",
+    "emotion": "年轻成年男子，有冲劲的游戏玩家，笑着放狠话，自然口语"
+  },
+  "demonDuel": {
+    "side": "demon",
+    "text": "戴皇冠那个！别光指挥，你过来！",
+    "speaker": "Eric",
+    "emotion": "成年男子，带笑挑衅，临场叫阵，有停顿"
+  },
+  "humanDuel": {
+    "side": "human",
+    "text": "别躲在小兵后面，出来接我这一招！",
+    "speaker": "Dylan",
+    "emotion": "年轻成年男子，兴奋地叫阵，声音有力度但不尖叫"
+  },
+  "demonSupport": {
+    "side": "demon",
+    "text": "援军来得正好！这回我可有人撑腰了。",
+    "speaker": "Eric",
+    "emotion": "成年男子，松一口气然后得意起来，轻松口语"
+  },
+  "humanSupport": {
+    "side": "human",
+    "text": "你们派的援军到了！好，这回一起上！",
+    "speaker": "Dylan",
+    "emotion": "年轻成年男子，收到队友支援，很开心，临场喊话"
+  },
+  "demonHurt": {
+    "side": "demon",
+    "text": "嘶，真疼！我刚才是不是站得太靠前了？",
+    "speaker": "Eric",
+    "emotion": "成年男子，挨打后倒吸一口气，心虚地自嘲，有喜剧感"
+  },
+  "humanHurt": {
+    "side": "human",
+    "text": "哎哎哎，真打我啊！盾兵，帮我挡一下！",
+    "speaker": "Dylan",
+    "emotion": "年轻成年男子，突然挨打，慌忙求助但还在战斗，生动口语"
+  },
+  "demonClaim": {
+    "side": "demon",
+    "text": "抢到了！挨这么多下，总算没白跑。",
+    "speaker": "Eric",
+    "emotion": "成年男子，吃力但得意，笑着喘气，口语"
+  },
+  "humanClaim": {
+    "side": "human",
+    "text": "东西到手了！别散开，咱们接着往前打！",
+    "speaker": "Dylan",
+    "emotion": "年轻成年男子，取得资源后振奋，招呼队友"
+  },
+  "demonThreat": {
+    "side": "demon",
+    "text": "对面怎么又来这么多人？行，跟我一起打！",
+    "speaker": "Eric",
+    "emotion": "成年男子，先惊讶再壮胆，嘴硬，不念稿"
+  },
+  "humanThreat": {
+    "side": "human",
+    "text": "对面都挤成一团了！别一个一个上，一起打！",
+    "speaker": "Dylan",
+    "emotion": "年轻成年男子，紧张地提醒队友，短促自然"
+  },
+  "demonBreak": {
+    "side": "demon",
+    "text": "这下砸开了！路通了，跟我上！",
+    "speaker": "Eric",
+    "emotion": "成年男子，惊喜，向队友招呼，自然口语"
+  },
+  "humanBreak": {
+    "side": "human",
+    "text": "砸得好！这儿能过去了，别绕路了！",
+    "speaker": "Dylan",
+    "emotion": "年轻成年男子，兴奋赞叹，立即招呼队友"
+  },
+  "demonMeteor": {
+    "side": "demon",
+    "text": "陨石！散开！别全站在一块！",
+    "speaker": "Eric",
+    "emotion": "成年男子，看到眼前危险，急促地提醒队友，有临场反应，清楚自然"
+  },
+  "demonQuake": {
+    "side": "demon",
+    "text": "地裂了！先别挤，往外走！",
+    "speaker": "Eric",
+    "emotion": "成年男子，看到眼前危险，急促地提醒队友，有临场反应，清楚自然"
+  },
+  "demonFlood": {
+    "side": "demon",
+    "text": "水来了！上岸！别在水里跟他硬拼！",
+    "speaker": "Eric",
+    "emotion": "成年男子，看到眼前危险，急促地提醒队友，有临场反应，清楚自然"
+  },
+  "humanMeteor": {
+    "side": "human",
+    "text": "陨石！散开！别全站在一块！",
+    "speaker": "Dylan",
+    "emotion": "成年男子，看到眼前危险，急促地提醒队友，有临场反应，清楚自然"
+  },
+  "humanQuake": {
+    "side": "human",
+    "text": "地裂了！先别挤，往外走！",
+    "speaker": "Dylan",
+    "emotion": "成年男子，看到眼前危险，急促地提醒队友，有临场反应，清楚自然"
+  },
+  "humanFlood": {
+    "side": "human",
+    "text": "水来了！上岸！别在水里跟他硬拼！",
+    "speaker": "Dylan",
+    "emotion": "成年男子，看到眼前危险，急促地提醒队友，有临场反应，清楚自然"
+  },
+  "demonAudienceChat": {
+    "side": "demon",
+    "text": "你还在啊？行，那我这皇冠再戴一会儿。",
+    "speaker": "Eric",
+    "emotion": "成年男子，游戏战场上回复队友的口语，轻松吐槽，有呼吸停顿"
+  },
+  "demonAudienceAdvance": {
+    "side": "demon",
+    "text": "行，往前压。说好了，你们得跟上！",
+    "speaker": "Eric",
+    "emotion": "成年男子，游戏战场上回复队友的口语，轻松吐槽，有呼吸停顿"
+  },
+  "demonAudienceRetreat": {
+    "side": "demon",
+    "text": "听你的，先撤两步。谁也不许说我腿软！",
+    "speaker": "Eric",
+    "emotion": "成年男子，游戏战场上回复队友的口语，轻松吐槽，有呼吸停顿"
+  },
+  "demonAudienceAttack": {
+    "side": "demon",
+    "text": "好，就打那个！等等，他怎么还有这么多兵？",
+    "speaker": "Eric",
+    "emotion": "成年男子，游戏战场上回复队友的口语，轻松吐槽，有呼吸停顿"
+  },
+  "demonAudienceGuard": {
+    "side": "demon",
+    "text": "收到，先护住队伍。别光顾着追，把后背卖了。",
+    "speaker": "Eric",
+    "emotion": "成年男子，游戏战场上回复队友的口语，轻松吐槽，有呼吸停顿"
+  },
+  "demonAudienceRefuse": {
+    "side": "demon",
+    "text": "我这点血还冲？你是对面派来的吧？",
+    "speaker": "Eric",
+    "emotion": "成年男子，游戏战场上回复队友的口语，轻松吐槽，有呼吸停顿"
+  },
+  "humanAudienceChat": {
+    "side": "human",
+    "text": "看见你的话了。等我打完这波，咱们再聊。",
+    "speaker": "Dylan",
+    "emotion": "成年男子，游戏战场上回复队友的口语，轻松吐槽，有呼吸停顿"
+  },
+  "humanAudienceAdvance": {
+    "side": "human",
+    "text": "好，我往前带。你们别停在后面看戏啊！",
+    "speaker": "Dylan",
+    "emotion": "成年男子，游戏战场上回复队友的口语，轻松吐槽，有呼吸停顿"
+  },
+  "humanAudienceRetreat": {
+    "side": "human",
+    "text": "有道理，先往后撤。这叫留着下回再打。",
+    "speaker": "Dylan",
+    "emotion": "成年男子，游戏战场上回复队友的口语，轻松吐槽，有呼吸停顿"
+  },
+  "humanAudienceAttack": {
+    "side": "human",
+    "text": "收到，盯住对面首领。别让我一个人上！",
+    "speaker": "Dylan",
+    "emotion": "成年男子，游戏战场上回复队友的口语，轻松吐槽，有呼吸停顿"
+  },
+  "humanAudienceGuard": {
+    "side": "human",
+    "text": "行，先把队伍护住。倒下的都是自己人。",
+    "speaker": "Dylan",
+    "emotion": "成年男子，游戏战场上回复队友的口语，轻松吐槽，有呼吸停顿"
+  },
+  "humanAudienceRefuse": {
+    "side": "human",
+    "text": "等会儿，我都快站不住了，还往前送啊？",
+    "speaker": "Dylan",
+    "emotion": "成年男子，游戏战场上回复队友的口语，轻松吐槽，有呼吸停顿"
+  },
+  "demonTroopAttack": {
+    "side": "demon",
+    "text": "冲过去！",
+    "speaker": "Eric",
+    "emotion": "成年士兵，短促有力的战场喊杀声，一声喊出，不拖长"
+  },
+  "humanTroopAttack": {
+    "side": "human",
+    "text": "冲过去！",
+    "speaker": "Dylan",
+    "emotion": "成年士兵，短促有力的战场喊杀声，一声喊出，不拖长"
+  }
+}

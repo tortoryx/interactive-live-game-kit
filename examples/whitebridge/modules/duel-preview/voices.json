@@ -1,0 +1,14 @@
+{
+  "demonIntroNew":{"side":"demon","text":"粮都被收走了，你救他们回去吃什么？","speaker":"Ryan","emotion":"低沉、克制的成年男性，带一点冷笑和愤怒"},
+  "humanIntroNew":{"side":"human","text":"你救了他们，为什么不让他们走？","speaker":"Aiden","emotion":"坚定清晰的年轻成年男性，质问对手"},
+  "demonBragNew":{"side":"demon","text":"来，堂堂正正，等我捡完这瓶药。","speaker":"Ryan","emotion":"前半句很自信，后半句心虚、嘴硬，有喜剧感"},
+  "humanBragNew":{"side":"human","text":"我一个人来的。至少目前是。","speaker":"Aiden","emotion":"年轻成年男性，先自豪，然后小声补充，轻微心虚"},
+  "demonPanic":{"side":"demon","text":"躲开！这块地怎么还会砸人！","speaker":"Ryan","emotion":"成年男性慌张躲避，语速快，戏剧化但清晰"},
+  "humanPanic":{"side":"human","text":"躲开！这块地怎么还会砸人！","speaker":"Aiden","emotion":"年轻成年男性惊讶又慌张，喜剧式喊叫"},
+  "demonFather":{"side":"demon","text":"我是索恩他爹。谁打的？","speaker":"Uncle_Fu","emotion":"稳重威严的中年男性，最后三个字带怒气"},
+  "humanFather":{"side":"human","text":"我是阿岚他爹。谁打的？","speaker":"Uncle_Fu","emotion":"苍劲的中年男性，护短，坚定有力"},
+  "demonElder":{"side":"demon","text":"我是刚才那位的爹。皇冠先扶一下。","speaker":"Uncle_Fu","emotion":"年迈男性，庄严登场后突然变得窘迫"},
+  "humanElder":{"side":"human","text":"我是刚才那位的爹。皇冠先扶一下。","speaker":"Uncle_Fu","emotion":"年迈男性，有点气喘，故作威严的喜剧感"},
+  "demonDefeatNew":{"side":"demon","text":"这次算你厉害。我家长还没来呢。","speaker":"Ryan","emotion":"疲惫的成年男性，不甘心但仍嘴硬"},
+  "humanDefeatNew":{"side":"human","text":"这次算你厉害。我家长还没来呢。","speaker":"Aiden","emotion":"战败受伤的年轻成年男性，不服气地嘟囔"}
+}

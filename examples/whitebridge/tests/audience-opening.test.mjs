@@ -1,0 +1,31 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mkdtemp,rm} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {LiveGame} from '../modules/live-runtime/game.mjs';
+import {Camera} from '../modules/pixel-war/public/camera.mjs';
+import {crowdScale,npcCount,playerTroop} from '../modules/pixel-war/audience-battle.mjs';
+import {recordParticipation,updateParticipation} from '../modules/live-runtime/participation.mjs';
+import {beginSettlement,advanceSettlement} from '../modules/pixel-war/settlement.mjs';
+const ticks=(g,ms)=>{for(let t=0;t<ms;t+=50)g.step(50);};
+const participant=(g,i,kind='like')=>recordParticipation(g,{platform:'bilibili',kind,supporter:{id:'verified-fixture-'+i}});
+test('opening adds bounded weak infantry while leaders continue fighting and no unowned disasters appear',()=>{
+ const g=new LiveGame();try{const w=g.world;assert.equal(w.units.length,0);assert.equal(w.audienceBattle.participants,0);ticks(g,15000);for(const h of Object.values(w.heroes))assert(h.hp<h.maxHP);assert(w.damageTotals.demon>0&&w.damageTotals.human>0);ticks(g,285000);assert(w.units.length>0);assert(w.units.every(u=>u.kind==='levy'));assert(npcCount(w,'human')<=60&&npcCount(w,'demon')<=60);assert.equal(w.wildlife.length,0);assert(!w.hazards.some(h=>!h.sourceId));assert.equal(w.surprises.length,0);assert.equal(w.ranks.demon,0);assert.equal(w.ranks.human,0);assert(Object.values(w.heroes).every(h=>h.hp>0));assert(Math.hypot(w.heroes.human.x-w.heroes.demon.x,w.heroes.human.y-w.heroes.demon.y)<400);}finally{g.close();}
+});
+test('first free participant owns named controllable troops independently of weak system infantry',()=>{
+ const g=new LiveGame();try{ticks(g,8000);assert.equal(g.testChat({side:'demon',text:'参战',viewer:'viewer-c'}).status,'recruited');ticks(g,1500);const players=g.world.units.filter(playerTroop);assert.equal(players.length,1);assert(players.every(u=>u.supporter.name==='试玩丙'));assert.equal(g.testChat({side:'demon',text:'2',viewer:'viewer-c'}).interaction.count,1);assert(players.every(u=>u.viewerOrder.kind==='retreat'));assert.equal(g.world.audienceBattle.participants,0);assert.equal(g.world.spawn('human','militia'),false);}finally{g.close();}
+});
+test('large real audiences increase capacity without exceeding weak infantry caps',()=>{const g=new LiveGame();try{for(let i=0;i<401;i++)participant(g,i);g.world.nextSpawn=0;ticks(g,50000);assert(npcCount(g.world,'demon')<=60);assert(npcCount(g.world,'human')<=60);assert(g.world.units.every(u=>u.kind==='levy'));assert.equal(g.world.wildlife.length,0);for(const n of [0,100,101,201,401,10000]){const s=crowdScale(n);assert.equal(s.systemCap,0);assert.equal(s.waveSize,0);assert(s.populationCap<=600);}assert(g.world.spawn('demon','militia',1,false,{source:'test',supporter:{id:'player',platform:'test'}}));}finally{g.close();}});
+
+test('only unique verified interactions count; joins, repeated messages, test identities and departed or idle viewers cannot inflate the crowd',()=>{
+ let now=1800000000000;const g=new LiveGame({now:()=>now});try{for(let i=0;i<110;i++){participant(g,0);participant(g,i,'join');recordParticipation(g,{platform:'test',kind:'chat',supporter:{id:String(i)}});}assert.equal(updateParticipation(g),1);participant(g,1);participant(g,0,'leave');assert.equal(updateParticipation(g),1);now+=300000;assert.equal(updateParticipation(g),0);const e={id:'bilibili:count-fixture',platform:'bilibili',kind:'chat',actor:'one-viewer',at:now,text:'参战'};g.receive(e);g.receive(e);assert.equal(updateParticipation(g),1);assert.equal(g.meta.queue.length,1);assert.throws(()=>g.receiveBatch([{...e,id:'bilibili:second',actor:'other'},{...e,id:'bad'}]));assert.equal(updateParticipation(g),1);}finally{g.close();}
+});
+test('old disk state migration removes system armies while preserving player troops, wounds, lineage and queued rewards',async()=>{
+ const dir=await mkdtemp(join(tmpdir(),'duel-opening-'));let g=new LiveGame({path:join(dir,'world.sqlite'),audienceDriven:false});try{g.testGift({side:'human',reward:'rally'});g.drain();g.testGift({side:'demon',reward:'muskets',id:'test:pending'});const troops=g.world.units.filter(playerTroop).map(u=>u.id);assert(troops.length>0);assert(npcCount(g.world,'human')>0);g.world.heroes.demon.hp=1234;g.world.heroes.human.rank=7;const id=g.world.heroes.human.id;g.close();g=new LiveGame({path:join(dir,'world.sqlite')});assert.deepEqual(g.world.units.map(u=>u.id),troops);assert.equal(g.world.heroes.demon.hp,1234);assert.equal(g.world.heroes.human.rank,7);assert.equal(g.world.heroes.human.id,id);assert(g.meta.queue.some(q=>q.receipt==='test:pending'));assert.equal(g.world.audienceBattle.version,2);g.close();g=new LiveGame({path:join(dir,'world.sqlite')});assert.deepEqual(g.world.units.map(u=>u.id),troops);}finally{g.close();await rm(dir,{recursive:true,force:true});}
+});
+test('ancestor brings only its finite demonstrated retinue; viewer can still summon the new package',()=>{
+ const g=new LiveGame();try{const w=g.world;w.mode='test_live';w.heroes.demon.hp=0;beginSettlement(w,['demon']);w.time=w.result.startedAt+w.result.timing.handoff;advanceSettlement(w,0);assert.equal(w.result.retinues.length,1);const shown=w.result.retinues[0].units.map(u=>u.id);assert(shown.length>0);w.time=w.result.startedAt+w.result.timing.end;advanceSettlement(w,0);ticks(g,50);assert.deepEqual(w.units.filter(u=>u.legacy).map(u=>u.id).sort(),shown.sort());assert(w.units.every(u=>!playerTroop(u)&&(u.legacy||u.kind==='levy')));assert.equal(w.spawn('demon','militia'),false);g.testGift({side:'demon',reward:'retinue'});g.drain();assert(w.units.some(u=>playerTroop(u)&&u.legacy));assert(w.units.filter(u=>!playerTroop(u)).every(u=>u.kind==='levy'||shown.includes(u.id)));}finally{g.close();}
+});
+
+test('empty opening camera frames the two leaders instead of looking toward an empty army front',()=>{const g=new LiveGame();try{for(const side of ['demon','human']){const c=new Camera(side,960,540);for(let i=0;i<90;i++)c.follow(g.snapshot(),1/30);for(const h of Object.values(g.world.heroes)){const p=c.project(h);assert(p.x>960*.25&&p.x<960*.75);assert(p.y>540*.2&&p.y<540*.8);}assert(c.zoom>.8);}}finally{g.close();}});

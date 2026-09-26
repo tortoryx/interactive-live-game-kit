@@ -1,0 +1,32 @@
+import {factionColor} from './faction-labels.mjs';
+import {WIDTH,HEIGHT} from './terrain.mjs';
+import {battleMapBox} from './view-rhythm.mjs';
+import {TONES,tacticalIcon} from './tactical-style.mjs';
+import {mapSquads,squadMapTags} from './squad-map.mjs';
+import {ownerColor} from './supporters.mjs';
+const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+export function tacticalMapLayout(state,camera,expansion=0){
+ const box=battleMapBox(camera,expansion),span=Math.max(4096,camera.w+500),left=clamp(camera.x-span/2,0,WIDTH-span),project=p=>({x:box.x+(p.x-left)/span*box.w,y:box.y+p.y/HEIGHT*box.h}),inside=p=>p.x>=left&&p.x<=left+span;
+ const a=project({x:camera.x-camera.w/2,y:camera.y-camera.h/2}),b=project({x:camera.x+camera.w/2,y:camera.y+camera.h/2}),x=clamp(a.x,box.x,box.x+box.w),y=clamp(a.y,box.y,box.y+box.h),viewport={x,y,w:clamp(b.x,box.x,box.x+box.w)-x,h:clamp(b.y,box.y,box.y+box.h)-y};return {box,span,left,project,inside,viewport};
+}
+export function drawTacticalMap(c,state,land,camera,side,threats,time,expansion=0){
+ const m=tacticalMapLayout(state,camera,expansion),{box:{x,y,w,h},project:p,inside}=m,good=TONES.success.color,bad=TONES.danger.color,yellow=TONES.neutral.color;
+ const groups=mapSquads(state.units,side),tags=squadMapTags(groups,{x:x+2,y:y+2,w:w-4,h:h-4},p);
+ c.save();c.fillStyle='#192329ee';c.fillRect(x-5,y-19,w+10,h+34);c.drawImage(land.canvas,m.left/WIDTH*land.canvas.width,0,m.span/WIDTH*land.canvas.width,land.canvas.height,x,y,w,h);c.strokeStyle='#8e958c';c.lineWidth=1;c.strokeRect(x,y,w,h);c.textAlign='left';c.font='bold 10px sans-serif';c.fillStyle='#deddd1';c.fillText(groups.length?'军团地图 · '+new Set(groups.map(g=>g.owner.id)).size+' 位玩家':'战况',x,y-7);
+ c.save();c.beginPath();c.rect(x,y,w,h);c.clip();
+ for(const u of state.units.filter(u=>u.hp>0&&inside(u))){const q=p(u);c.fillStyle=u.factionColor||factionColor(u.side);c.fillRect(q.x-1,q.y-1,2,2);}
+ for(const march of state.campaign?.signals?.marches||[]){if(!inside(march))continue;const q=p(march);c.save();c.translate(q.x,q.y);c.rotate(march.angle);c.strokeStyle=factionColor(march.side);c.lineWidth=2;for(let i=0;i<3;i++){const t=(time/450+i*5)%16;c.beginPath();c.moveTo(t-5,-3);c.lineTo(t,0);c.lineTo(t-5,3);c.stroke();}c.restore();}
+ for(const t of threats.filter(inside)){const q=p(t);if(t.kind==='army')continue;tacticalIcon(c,t.kind==='beast'?'alert':'giant',q.x,q.y,bad,12);}
+ for(const site of state.campaign?.sites||[]){if(!inside(site))continue;const q=p(site);c.fillStyle='#20292f';c.fillRect(q.x-8,q.y-9,16,18);tacticalIcon(c,site.kind,q.x,q.y,factionColor(site.controller),14);if(site.assault?.until>time){tacticalIcon(c,site.assault.defender===side?'alert':'clash',q.x+9,q.y-11,site.assault.defender===side?bad:good,14+Math.sin(time/220));}}
+ for(const b of state.barracks||[])if(b.hp>0&&inside(b)){const q=p(b);tacticalIcon(c,'camp',q.x,q.y,b.factionColor||factionColor(b.side),15);c.fillStyle=ownerColor(b.supporter);c.fillRect(q.x-6,q.y+8,12,2);if(time-b.hitAt<1500)tacticalIcon(c,'alert',q.x+9,q.y-10,bad,12);}
+ for(const event of state.warEvents||[])for(const z of state.hazards.filter(z=>z.eventId===event.id&&z.until>time&&inside(z))){const q=p(z);c.strokeStyle=bad;c.lineWidth=1;c.beginPath();c.arc(q.x,q.y,3+Math.sin(time/120)*1.5,0,7);c.stroke();}
+ for(const e of state.warEvents||[])if(e.stampede&&!e.stampede.finished&&inside(e)){const a=p({x:e.x-e.stampede.width/2,y:0}),b=p({x:e.x+e.stampede.width/2,y:HEIGHT});c.fillStyle='#ff786a35';c.fillRect(a.x,a.y,b.x-a.x,b.y-a.y);c.strokeStyle=bad;c.lineWidth=1;c.strokeRect(a.x,a.y,b.x-a.x,b.y-a.y);const q=p({x:e.x,y:clamp(e.stampede.frontY,90,HEIGHT-90)});c.fillStyle=bad;c.beginPath();c.moveTo(q.x-4,q.y-4);c.lineTo(q.x+4,q.y-4);c.lineTo(q.x,q.y+4);c.closePath();c.fill();}
+ for(const clash of state.campaign?.signals?.clashes||[])if(inside(clash)){const q=p(clash);tacticalIcon(c,'clash',q.x,q.y,yellow,16);}
+ for(const hero of [...Object.values(state.heroes),...state.units.filter(u=>u.commander)])if(hero.hp>0&&inside(hero)){const q=p(hero);tacticalIcon(c,'king',q.x,q.y,hero.factionColor||factionColor(hero.side),13);}
+ for(const [owner,home] of Object.entries(state.campaign?.homes||{})){const q=p(home);q.x=clamp(q.x,x+9,x+w-9);tacticalIcon(c,'home',q.x,inside(home)?q.y:y+h-12,factionColor(owner),14);c.fillStyle='#202a2e';c.fillRect(q.x-9,y+h-3,18,3);}
+ const v=m.viewport;c.fillStyle='#f8f3dc12';c.fillRect(v.x,v.y,v.w,v.h);c.strokeStyle='#172027';c.lineWidth=4;c.strokeRect(v.x,v.y,v.w,v.h);c.strokeStyle='#ddd5bc';c.lineWidth=2;c.strokeRect(v.x,v.y,v.w,v.h);c.fillStyle='#ddd5bc';for(const xx of [v.x,v.x+v.w-4])for(const yy of [v.y,v.y+v.h-4])c.fillRect(xx,yy,4,4);c.restore();
+ for(const tag of tags){const g=tag.group,tint=g.factionColor||ownerColor(g.owner),q={x:clamp(tag.anchor.x,x+3,x+w-3),y:clamp(tag.anchor.y,y+3,y+h-3)};c.fillStyle=tint;c.beginPath();c.arc(q.x,q.y,3,0,7);c.fill();c.fillStyle='#18232be8';c.fillRect(tag.x,tag.y,tag.w,tag.h);c.strokeStyle=tint;c.lineWidth=1;c.strokeRect(tag.x,tag.y,tag.w,tag.h);c.fillStyle=tint;c.font='bold '+tag.font+'px sans-serif';c.textAlign='center';const max=Math.max(1,Math.floor((tag.w-20)/tag.font));c.fillText(Array.from(g.owner.name||'玩家').slice(0,max).join('')+' ×'+g.units.length,tag.x+tag.w/2,tag.y+tag.h*.76,tag.w-3);if(tag.outside){c.textAlign='left';c.fillText(tag.anchor.x<x?'◀':'▶',tag.x+1,tag.y+tag.h*.76);}}
+ c.textAlign='left';const legend=[['grain','粮仓'],['forge','工坊'],['clash','交战']];for(let i=0;i<3;i++){tacticalIcon(c,legend[i][0],x+6+i*w/3,y+h+9,yellow,10);c.fillStyle='#d5dfc9';c.font='9px sans-serif';c.fillText(legend[i][1],x+14+i*w/3,y+h+12);}
+ const important=threats.filter(inside).slice(0,1);for(let i=0;i<important.length;i++){const t=important[i],yy=y-31-(important.length-1-i)*20;c.fillStyle='#28332bf0';c.fillRect(x-5,yy-13,w+10,17);tacticalIcon(c,t.kind==='army'?'march':t.kind==='beast'?'alert':'giant',x,yy-4,bad,11);c.fillStyle=bad;c.font='10px sans-serif';c.fillText(t.label+(t.count>1?' ×'+t.count:''),x+12,yy);}
+ c.restore();return {box:m.box,viewport:m.viewport,left:m.left,span:m.span,viewerTags:tags.map(t=>({name:t.group.owner.name,owner:t.group.owner.id,count:t.group.units.length,x:t.x,y:t.y,w:t.w,h:t.h,outside:t.outside})),icons:{sites:(state.campaign?.sites||[]).length,clashes:state.campaign?.signals?.clashes?.length||0,marches:state.campaign?.signals?.marches?.length||0,assaults:(state.campaign?.sites||[]).filter(s=>s.assault?.until>time).length}};
+}

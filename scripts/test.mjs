@@ -1,0 +1,5 @@
+import{readdirSync}from'node:fs';import{spawn}from'node:child_process';
+const root=new URL('../',import.meta.url);
+const release=['adaptive-audio','army-muster','commander-voice','deepseek-api','host-attention','host-performance','host-voice-continuity','independent-clans','observer-only','observer-story-context','observer-variety','owned-combat','portable-release','rescue-lifecycle','speech-playback','troop-life-fx','unit-marker-tracker','voice-reference-profile','live-runtime','platform-connect-v43','room-gifts','viewer-history','viewer-memory','live-feedback','menu-budget-faction','frontline-influence'];
+const files=readdirSync(new URL('examples/whitebridge/tests/',root)).filter(f=>f.endsWith('.test.mjs')&&(process.argv.includes('--full')||release.includes(f.replace('.test.mjs','')))).map(f=>'examples/whitebridge/tests/'+f);
+const child=spawn(process.execPath,['--test','--test-concurrency=1',...files],{cwd:root,stdio:'inherit'});child.on('exit',(code,signal)=>process.exitCode=signal?1:code||0);

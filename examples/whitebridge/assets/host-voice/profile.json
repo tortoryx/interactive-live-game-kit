@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "engine": "qwen3-base",
+  "id": "witch-soft-v1",
+  "text": "我刚才一直在看后面那队，结果前面已经打起来了。你等一下，我看看他们还能不能退回来。",
+  "sampleRate": 24000,
+  "sha256": "43ccca0f1fb35f364d77339f71e9baeeeb6411dc8e1825c281a0b5ade45fcee8",
+  "origin": "Original synthetic adult voice. Not a recording of a real person."
+}

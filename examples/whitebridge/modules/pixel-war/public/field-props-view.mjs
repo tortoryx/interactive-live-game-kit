@@ -1,0 +1,7 @@
+import {factionColor} from './faction-labels.mjs';
+const box=(c,col,x,y,w,h)=>{c.fillStyle=col;c.fillRect(x,y,w,h);};
+export function drawFieldProp(c,p,time){c.save();c.translate(Math.round(p.x),Math.round(p.y));
+ if(p.kind==='tower'){box(c,'#30403366',-29,-7,60,18);for(const x of [-22,17]){box(c,'#514639',x,-102,7,108);box(c,'#ac9470',x,-102,2,105);}box(c,'#675840',-30,-108,62,13);box(c,'#baa079',-28,-108,58,4);for(const y of [-37,-61,-84])box(c,'#806e50',-18,y,40,5);box(c,'#465649',-35,-143,72,11);box(c,'#657966',-29,-151,59,8);box(c,'#8e9b73',-22,-157,44,6);box(c,'#423f35',-22,-133,7,25);box(c,'#423f35',18,-133,7,25);box(c,p.contested?'#ffbd76':p.controller?factionColor(p.controller):'#c2ba8d',-13,-130,27,13);label(c,p.contested?'望楼 · 争夺中':'望楼 · 远程射程 +18%',-167);}
+ else {if(p.used){box(c,'#493b2f',-15,-9,30,10);box(c,'#252c27',-9,-5,18,7);}else {box(c,'#523b31',-13,-33,26,34);box(c,'#a97148',-11,-31,22,30);for(const x of [-6,4])box(c,'#614b39',x,-29,2,27);for(const y of [-27,-9])box(c,'#484d48',-14,y,28,5);box(c,'#e5b57b',-5,-21,10,9);box(c,'#644838',-1,-20,2,7);if(p.fuseAt){box(c,'#ffc260',2,-40,4,7);box(c,'#ffe8a4',4+Math.sin(time/55)*6,-44,3,3);}label(c,p.fuseAt?'快闪开！':'火药桶',-44);}}
+ c.restore();}
+function label(c,text,y){c.font='bold 11px sans-serif';c.textAlign='center';c.strokeStyle='#26382e';c.lineWidth=3;c.strokeText(text,0,y);c.fillStyle='#efe0b8';c.fillText(text,0,y);}

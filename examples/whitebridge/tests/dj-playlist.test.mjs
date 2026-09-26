@@ -1,0 +1,17 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {DJMusic,validDJTrack} from '../modules/pixel-war/public/dj-music.mjs';
+import {mediaRange} from '../modules/duel-preview/media-range.mjs';
+import {createPreview} from '../modules/duel-preview/server.mjs';
+import {readFileSync} from 'node:fs';
+class Media{constructor(url){this.src=url;this.paused=true;this.currentTime=0;this.duration=240;}play(){this.paused=false;this.onplaying?.();return Promise.resolve();}pause(){this.paused=true;}removeAttribute(){this.src='';}load(){}}
+const context=()=>{const param=()=>({value:0,setTargetAtTime(){}}),node=()=>({gain:param(),frequency:param(),Q:param(),connect(){},disconnect(){}});return {currentTime:0,sampleRate:32000,createGain:node,createBiquadFilter:node,createMediaElementSource:node};};
+test('whole playlist advances, wraps, pauses/resumes in place and keeps only current and next media alive',async()=>{
+ const before=global.fetch,tracks=Array.from({length:91},(_,i)=>({file:'/audio/dj/song-'+i+'.m4a',duration:240,title:'Song '+i}));global.fetch=async()=>({ok:true,json:async()=>({mode:'dj',tracks})});const media=[],m=new DJMusic(context(),{},{createAudio:url=>{const a=new Media(url);media.push(a);return a;}});
+ try{assert(await m.load());assert.equal(m.tracks.length,91);assert(m.media.paused);m.update({enabled:true,paused:false});assert(!m.media.paused);m.media.currentTime=10;m.update({enabled:false});assert(m.media.paused);assert.equal(m.media.currentTime,10);m.update({enabled:true});
+ for(let i=0;i<91;i++){assert.equal(m.currentIndex,i);m.media.onended();assert(media.filter(x=>x.src).length<=2);}assert.equal(m.currentIndex,0);
+ m.close();assert(media.every(x=>!x.src));
+ }finally{global.fetch=before;m.close();}
+});
+test('missing tracks skip once; a wholly broken playlist stops instead of spinning',async()=>{const before=global.fetch;global.fetch=async()=>({ok:true,json:async()=>({mode:'dj',tracks:[{file:'/audio/dj/a.m4a',duration:20},{file:'/audio/dj/b.m4a',duration:20}]})});const m=new DJMusic(context(),{},{createAudio:u=>new Media(u)});try{await m.load();m.media.onerror();assert.equal(m.currentIndex,1);m.media.onerror();assert.equal(m.ready,false);assert.equal(m.error,'dj_playlist_unavailable');}finally{m.close();global.fetch=before;}});
+test('byte ranges reject invalid/out-of-bounds requests and support seeks and suffixes',()=>{assert.deepEqual(mediaRange('bytes=10-20',100),{status:206,start:10,end:20});assert.deepEqual(mediaRange('bytes=-5',100),{status:206,start:95,end:99});assert.deepEqual(mediaRange('bytes=90-',100),{status:206,start:90,end:99});for(const r of ['bytes=100-','bytes=4-2','bytes=-0','bytes=0-1,2-3','bytes=-'])assert.equal(mediaRange(r,100),null);assert(!validDJTrack({file:'https://example.com/a.m4a',duration:10}));});
+test('real local DJ audio is served by byte range, absent from the owner surface, and cannot escape its registered asset path',async t=>{const app=await createPreview({stagePort:44884,controlPort:44885,clock:false});t.after(()=>app.close());const p=JSON.parse(readFileSync('modules/pixel-war/public/audio/dj/playlist.json')).tracks[0].file;const r=await fetch('http://127.0.0.1:44884'+p,{headers:{Range:'bytes=0-127'}});assert.equal(r.status,206);assert.equal((await r.arrayBuffer()).byteLength,128);assert.match(r.headers.get('content-range'),/^bytes 0-127\//);assert.equal((await fetch('http://127.0.0.1:44885'+p)).status,404);assert.equal((await fetch('http://127.0.0.1:44884/audio/dj/../../../private')).status,404);});

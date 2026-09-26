@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-07",
+  "adopted": "Original transparent RGBA hero and troop sheets; measured source frames are used by renderer.",
+  "rejected": [
+    {
+      "reason": "Grid layout revision contained baked checkerboard RGB instead of alpha; not deployed.",
+      "prompt": "Edit this existing sprite atlas to FIX ITS GRID LAYOUT. Preserve all sixteen fantasy units, their style, factions and exact order. Output one square transparent RGBA canvas. Exactly 4 columns x 4 rows of perfectly equal square cells. CRITICAL: scale each COMPLETE unit down to fit inside only the CENTRAL 72% of its cell. Each cell must have a very generous transparent EMPTY margin of at least 14% on all four sides. No heads, feet, weapons, horns or capes within these margins. Each cell centered precisely at 12.5%,37.5%,62.5%,87.5% canvas width and the same percentages of height. All four row baselines identical relative to their cell. Do not arrange rows organically. Game engine will cut the image at EXACTLY 25%, 50%, 75% of width and height, so no part of a unit may cross those cuts. Keep original painted dark fantasy art. No added labels or grid lines. Original human top two rows and demon bottom two rows unchanged order. Transparent background; no black pixels except actual character outlines."
+    },
+    {
+      "reason": "Background-removal retry still contained baked checkerboard RGB; not deployed.",
+      "prompt": "Remove the gray-and-white checkerboard background from this image and make it ACTUALLY TRANSPARENT, as a real transparent RGBA PNG with zero-alpha pixels. Keep all 16 figures in exactly the same positions and scale, unchanged. Remove ALL checkered squares between and around figures, including gaps inside capes, legs and weapons. Do not draw a checkerboard or white or black background. Deliver actual transparent alpha, not a picture of transparency. This is a game sprite sheet; preserve original dimensions and exact layout, keep the complete characters and generous empty margins. Transparent background."
+    }
+  ],
+  "characterSheetGrid": [
+    4,
+    3
+  ],
+  "characterGenerations": 3,
+  "characterExpressions": 4,
+  "troopFrameMethod": "Read-only alpha connected-component analysis; no source bitmap modified."
+}
