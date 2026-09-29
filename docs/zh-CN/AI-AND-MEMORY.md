@@ -63,7 +63,7 @@ Live2D / Cubism 模型通常是一个文件夹，里面有 `model3.json`、模�
 npm run host:install -- --model "/path/to/model.model3.json" --runtime "/path/to/runtime-folder"
 ```
 
-刷新游戏。角色应能眨眼、呼吸、转动头身，并随播放中的语音张嘴。模型参数不同，动作幅度可能需要调整。半身构图通过 `examples/whitebridge/modules/pixel-war/public/empress/config.json` 的 `height` 和 `offsetY` 调整。
+安装完成后，在启动游戏的终端按 `Ctrl+C`，重新运行 `npm start`，再刷新页面。服务会在启动时读取模型和贴图，新装文件需要重启后才可访问。角色应能眨眼、呼吸、转动头身，并随播放中的语音张嘴。模型参数不同，动作幅度可能需要调整。半身构图通过 `examples/whitebridge/modules/pixel-war/public/empress/config.json` 的 `height` 和 `offsetY` 调整。
 
 ## 她会收到什么、记住什么
 
