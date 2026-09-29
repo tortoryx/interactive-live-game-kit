@@ -63,7 +63,7 @@ Put the four files in one runtime folder. Replace both sample paths below with y
 npm run host:install -- --model "/path/to/model.model3.json" --runtime "/path/to/runtime-folder"
 ```
 
-Refresh the game. Check blinking, breathing, head/body movement and lips following speech playback. Models expose different parameters, so motion may need adjustment. Set framing through `height` and `offsetY` in `examples/whitebridge/modules/pixel-war/public/empress/config.json`.
+After installation, press `Ctrl+C` in the game terminal, run `npm start` again, and refresh the page. The server loads models and textures at startup, so newly installed files require a restart. Check blinking, breathing, head/body movement and lips following speech playback. Models expose different parameters, so motion may need adjustment. Set framing through `height` and `offsetY` in `examples/whitebridge/modules/pixel-war/public/empress/config.json`.
 
 ## Context and memory
 
