@@ -28,7 +28,9 @@ Node runs with the launching user's permissions. For stronger isolation, use a l
 
 ## Viewer data
 
-Cross-day memory retains interaction records. Explain the purpose, choose a retention period and provide a deletion process. The example uses a local database and has no public account-management portal. Use synthetic identities and messages for debugging and issue reports.
+Cross-day memory retains interaction records, and chat may still be recorded with AI disabled. This version has no automatic retention period or complete per-viewer deletion tool. Withdrawal clears presentation and conversation state, but event receipts may retain the original message; it is not complete data erasure.
+
+To clear all local records, stop the service and move or delete `.local/` as described above. This also removes game saves and platform configuration. Before operating long term with real viewers, implement retention and complete per-viewer deletion and explain the purpose of collection. Use synthetic identities and messages for debugging and issue reports.
 
 ## Releasing your version
 
